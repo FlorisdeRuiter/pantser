@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c06e209953439d4409f8770890965bcc, type: 3}
+  m_Name: BombardierAcidSpray
+  m_EditorClassIdentifier: 
+  cardName: Bombardier Acid Spray
+  cardInfo: Player sprays a large amount of acid in a random direction on the battlefield
+  cardStage: 0
+  baseCardStage: 0
+  cardSprite: {fileID: 2800000, guid: e422ea04d31b363458c091426a243157, type: 3}
+  abilityName: BombardierAcidSpray
+  abilityType: 1
+  Modifications:
+  - Damage: 0
+    Interval: 0
+    Downtime: 0
+    Uptime: 0
+  abilityObject: {fileID: 4486636073472476565, guid: 0451812dbcd89364c9dfeebb5291068e, type: 3}
