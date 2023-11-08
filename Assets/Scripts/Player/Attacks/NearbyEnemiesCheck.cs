@@ -11,11 +11,11 @@ public class NearbyEnemiesCheck : MonoBehaviour
 
     public List<Transform> nearbyEnemyList;
 
-    private BoxCollider2D collider;
+    private BoxCollider2D _collider;
 
     private void Start()
     {
-        collider = GetComponent<BoxCollider2D>();
+        _collider = GetComponent<BoxCollider2D>();
         player = Player.GetInstance();
         SetColliderToCameraSize();
     }
@@ -101,7 +101,7 @@ public class NearbyEnemiesCheck : MonoBehaviour
         float width = 2.0f * orthoSize * aspect;
         float height = 2.0f * orthoSize;
 
-        collider.size = new Vector2(width, height);
+        _collider.size = new Vector2(width, height);
     }
     #endregion
 
