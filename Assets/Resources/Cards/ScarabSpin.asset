@@ -21,8 +21,20 @@ MonoBehaviour:
   abilityName: ScarabSpin
   abilityType: 0
   Modifications:
-  - Damage: 0
-    Interval: 0
+  - Damage: 5
+    Interval: 1
+    Downtime: 0
+    Uptime: 0
+  - Damage: 10
+    Interval: 1
+    Downtime: 0
+    Uptime: 0
+  - Damage: 15
+    Interval: 1
+    Downtime: 0
+    Uptime: 0
+  - Damage: 20
+    Interval: 1
     Downtime: 0
     Uptime: 0
   abilityObject: {fileID: 4861706444531354122, guid: 0229378741586764c8d79e87e3df224e, type: 3}

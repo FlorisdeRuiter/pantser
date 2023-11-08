@@ -20,8 +20,20 @@ MonoBehaviour:
   abilityName: BombardierAcidSpray
   abilityType: 1
   Modifications:
-  - Damage: 0
-    Interval: 0
+  - Damage: 10
+    Interval: 2
+    Downtime: 0
+    Uptime: 0
+  - Damage: 15
+    Interval: 2
+    Downtime: 0
+    Uptime: 0
+  - Damage: 20
+    Interval: 2
+    Downtime: 0
+    Uptime: 0
+  - Damage: 25
+    Interval: 2
     Downtime: 0
     Uptime: 0
   abilityObject: {fileID: 4486636073472476565, guid: 0451812dbcd89364c9dfeebb5291068e, type: 3}

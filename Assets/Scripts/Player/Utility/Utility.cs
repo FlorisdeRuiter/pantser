@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Utility : Ability
+public class Utility : Ability, IAbility
 {
     public enum DisableType
     {
@@ -115,5 +115,11 @@ public class Utility : Ability
     {
         upTime = uptimeMod;
         downTime = downtimeMod;
+    }
+
+    public void SetConfig(Modification pModification)
+    {
+        downTime = pModification.Downtime;
+        upTime = pModification.Uptime;
     }
 }

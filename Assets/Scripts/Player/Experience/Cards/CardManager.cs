@@ -32,7 +32,10 @@ public class CardManager : MonoBehaviour
         int returnAmount;
 
         if (cardDetailsList.Count < cardsNeeded)
+        {
             returnAmount = cardDetailsList.Count;
+            Debug.Log("???");
+        }
         else
             returnAmount = cardsNeeded;
 
@@ -41,7 +44,7 @@ public class CardManager : MonoBehaviour
             CardScriptableDetails cardToAdd = cardDetailsList[Random.Range(0, cardDetailsList.Count)];
 
             if (selectedCards.Contains(cardToAdd))
-                cardsNeeded += 1;
+                returnAmount += 1;
             else
                 selectedCards.Add(cardToAdd);
         }

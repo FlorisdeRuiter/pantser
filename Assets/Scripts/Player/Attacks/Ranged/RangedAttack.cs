@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(Animator))]
-public class RangedAttack : MonoBehaviour
+public class RangedAttack : MonoBehaviour, IAbility
 {
     public enum TargetType
     {
@@ -138,5 +138,11 @@ public class RangedAttack : MonoBehaviour
             projectile.GetComponent<Projectile>().damage = baseDamage * player.constantDamageModifier;
         }
         baseAttackInterval = intervalMod;
+    }
+
+    public void SetConfig(Modification pModification)
+    {
+        baseDamage = pModification.Damage;
+        baseAttackInterval = pModification.Interval;
     }
 }
