@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
+    // !!!Not in use anymore!!!
+
+
     public enum MovementInputType
     {
         Keyboard,

@@ -17,14 +17,6 @@ public class CardManager : MonoBehaviour
         cardDetailsList = Resources.LoadAll<CardScriptableDetails>("Cards").ToList();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            DisplayCards();
-        }
-    }
-
     public List<CardScriptableDetails> GetRandomCards(int cardsNeeded)
     {
         List<CardScriptableDetails> selectedCards = new List<CardScriptableDetails>();
