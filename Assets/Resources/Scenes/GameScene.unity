@@ -5970,6 +5970,10 @@ PrefabInstance:
       propertyPath: _baseAttackInterval
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5692153316360643930, guid: a853d32ff090ec5478e7ee32587eb176, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a48a6b933cbc5df42bb37f4fb7074d7a, type: 3}
     - target: {fileID: 5960472753596859927, guid: a853d32ff090ec5478e7ee32587eb176, type: 3}
       propertyPath: _maxHealth
       value: 100
