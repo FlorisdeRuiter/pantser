@@ -5,14 +5,14 @@ using UnityEngine;
 public class Ability : MonoBehaviour
 {
     [Header("Ability Base Class")]
-    [SerializeField] private List<Transform> childrenList;
+    [SerializeField] private List<Transform> _childrenList;
 
     private void Start()
     {
         //Puts all children under parent in a list
         foreach (Transform child in transform)
         {
-            childrenList.Add(child);
+            _childrenList.Add(child);
         }
     }
 
@@ -22,7 +22,7 @@ public class Ability : MonoBehaviour
     /// </summary>
     public virtual void EnableChildren()
     {
-        foreach (Transform child in childrenList)
+        foreach (Transform child in _childrenList)
         {
             child.gameObject.SetActive(true);
         }
@@ -33,7 +33,7 @@ public class Ability : MonoBehaviour
     /// </summary>
     public virtual void DisableChildren()
     {
-        foreach (Transform child in childrenList)
+        foreach (Transform child in _childrenList)
         {
             child.gameObject.SetActive(false);
         }

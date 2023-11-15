@@ -14,17 +14,17 @@ public class Utility : Ability, IAbility
 
     [Header("Timers")]
     [Tooltip("Time until object disables in seconds")]
-    [SerializeField] private float upTime;
+    [SerializeField] private float _upTime;
     [Tooltip("Time object will be disabled for in seconds")]
-    [SerializeField] private float downTime;
+    [SerializeField] private float _downTime;
 
     [Header("Disable Type")]
-    [SerializeField] private DisableType disableType;
+    [SerializeField] private DisableType _disableType;
 
     [Header("Event")]
-    [SerializeField] private UnityEvent utilityEvent;
+    [SerializeField] private UnityEvent _utilityEvent;
 
-    private readonly string summonTrigger = "summon";
+    private readonly string _summonTrigger = "summon";
 
     private Animator anim;
 
@@ -34,7 +34,7 @@ public class Utility : Ability, IAbility
     private void OnEnable()
     {
         anim = GetComponent<Animator>();
-        switch (disableType)
+        switch (_disableType)
         {
             case DisableType.time:
                 StartCoroutine(UptimeTimer());
@@ -46,7 +46,7 @@ public class Utility : Ability, IAbility
             default:
                 break;
         }
-        utilityEvent?.Invoke();
+        _utilityEvent?.Invoke();
     }
     #endregion
 
@@ -56,7 +56,7 @@ public class Utility : Ability, IAbility
     /// </summary>
     private IEnumerator UptimeTimer()
     {
-        WaitForSeconds wait = new WaitForSeconds(upTime);
+        WaitForSeconds wait = new WaitForSeconds(_upTime);
 
         yield return wait;
 
@@ -68,7 +68,7 @@ public class Utility : Ability, IAbility
     /// </summary>
     private IEnumerator DowntimeTimer()
     {
-        WaitForSeconds wait = new WaitForSeconds(downTime);
+        WaitForSeconds wait = new WaitForSeconds(_downTime);
 
         yield return wait;
 
@@ -85,15 +85,15 @@ public class Utility : Ability, IAbility
     {
         base.EnableChildren();
 
-        anim.SetTrigger(summonTrigger);
+        anim.SetTrigger(_summonTrigger);
 
-        switch (disableType)
+        switch (_disableType)
         {
             case DisableType.time:
                 StartCoroutine(UptimeTimer());
                 break;
             case DisableType.damage:
-                shield.hitsToBreak = shield.maxHitsToBreak;
+                shield.HitsToBreak = shield.MaxHitsToBreak;
                 break;
             default:
                 break;
@@ -113,13 +113,13 @@ public class Utility : Ability, IAbility
 
     public void UpdateUtilityConfigs(float uptimeMod, float downtimeMod)
     {
-        upTime = uptimeMod;
-        downTime = downtimeMod;
+        _upTime = uptimeMod;
+        _downTime = downtimeMod;
     }
 
     public void SetConfig(Modification pModification)
     {
-        downTime = pModification.Downtime;
-        upTime = pModification.Uptime;
+        _downTime = pModification.Downtime;
+        _upTime = pModification.Uptime;
     }
 }

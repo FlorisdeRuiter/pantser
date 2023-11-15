@@ -8,7 +8,7 @@ public abstract class PoolItem : MonoBehaviour
     /// <summary>
     /// Set the ObjectPool  belong to.
     /// </summary>
-    public ObjectPool pool { set { _myPool = value; } }
+    public ObjectPool Pool { set { _myPool = value; } }
 
     #region Activate and deactivating PoolItem
     /// <summary>

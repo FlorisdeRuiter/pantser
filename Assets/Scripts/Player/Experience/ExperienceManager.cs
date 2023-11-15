@@ -17,12 +17,18 @@ public class ExperienceManager : MonoBehaviour
 
     public void OnGainExp(float expGained)
     {
+        // Adds gained experience
         currentExp += expGained;
 
+        // Checks if gained experience is enough for level up
         if (currentExp >= expNeededForLevelUp)
         {
+            // Sets the excess exp
             float excessExp = currentExp - expNeededForLevelUp;
+
+            // Stores excess experience
             currentExp = excessExp;
+
             levelUpEvent?.Invoke();
         }
     }

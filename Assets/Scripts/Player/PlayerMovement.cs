@@ -5,21 +5,23 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float walkSpeed;
+    [SerializeField] private float _walkSpeed;
 
-    [SerializeField] private float horInput;
-    [SerializeField] private float verInput;
+    [SerializeField] private float _horInput;
+    [SerializeField] private float _verInput;
 
     private void Update()
     {
+        // Uses input value to decide the player's walk direction
         transform.position = new Vector2
-        (transform.position.x + (walkSpeed * horInput * Time.deltaTime),
-        transform.position.y + (walkSpeed * verInput * Time.deltaTime));
+        (transform.position.x + (_walkSpeed * _horInput * Time.deltaTime),
+        transform.position.y + (_walkSpeed * _verInput * Time.deltaTime));
     }
 
     public void Move(InputAction.CallbackContext context)
     {
-        horInput = context.ReadValue<Vector2>().x;
-        verInput = context.ReadValue<Vector2>().y;
+        // Reads input value received by unity's input system
+        _horInput = context.ReadValue<Vector2>().x;
+        _verInput = context.ReadValue<Vector2>().y;
     }
 }

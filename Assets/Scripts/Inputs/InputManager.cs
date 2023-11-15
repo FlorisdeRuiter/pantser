@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+/// <summary>
+/// Tracks the type of input player is using
+/// </summary>
 public class InputManager : MonoBehaviour
 {
     // !!!Not in use anymore!!!
-
 
     public enum MovementInputType
     {

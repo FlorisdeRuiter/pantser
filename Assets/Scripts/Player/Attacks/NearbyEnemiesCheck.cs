@@ -21,12 +21,9 @@ public class NearbyEnemiesCheck : MonoBehaviour
     }
 
     #region Adding and Removing Enemies from List
-    /// <summary>
-    /// Adds enemy to list when it enters the collider
-    /// </summary>
-    /// <param name="collision">The enemy's collider</param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // Adds transform to list if collider entered the nearby enemy collider and has the IEnemy component
         IEnemy enemy;
         if (collision.gameObject.TryGetComponent<IEnemy>(out enemy))
         {
@@ -34,12 +31,9 @@ public class NearbyEnemiesCheck : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Removes enemy from nearby enemies list when it exits the collider or deactivates.
-    /// </summary>
-    /// <param name="collision">The enemy's collider</param>
     private void OnTriggerExit2D(Collider2D collision)
     {
+        // Removes transform to list if collider exited the nearby enemy collider and has the IEnemy component 
         IEnemy enemy;
         if (collision.gameObject.TryGetComponent<IEnemy>(out enemy))
         {
@@ -49,21 +43,19 @@ public class NearbyEnemiesCheck : MonoBehaviour
     #endregion
 
     #region Get Closest Enemy
-    /// <summary>
-    /// Loops through list of nearby enemies and gets their tranform.
-    /// Compares the distance of each enemy from the player.
-    /// Enemy with the least distance is bestTarget.
-    /// returns bestTarget
-    /// </summary>
     public Transform GetNearestEnemy()
     {
         Transform bestTarget = null;
         float closestDistanceSqr = Mathf.Infinity;
         Vector3 currentPosition = player.transform.position;
+
+        // Takes the transform from nearby enemies
         foreach (Transform potentialTarget in nearbyEnemyList)
         {
             Vector3 directionToTarget = potentialTarget.position - currentPosition;
             float dSqrToTarget = directionToTarget.sqrMagnitude;
+
+            // Compares distance to player
             if (dSqrToTarget < closestDistanceSqr)
             {
                 closestDistanceSqr = dSqrToTarget;
@@ -95,12 +87,15 @@ public class NearbyEnemiesCheck : MonoBehaviour
             Debug.LogError("Camera is not set to orthographic");
         }
 
+        // Checks the camera's aspect ratio
         float aspect = (float)Screen.width / Screen.height;
         float orthoSize = cam.orthographicSize;
 
+        // Calculates the correct width and height
         float width = 2.0f * orthoSize * aspect;
         float height = 2.0f * orthoSize;
 
+        // Sets the colliders size equal to what the camera is displaying
         _collider.size = new Vector2(width, height);
     }
     #endregion

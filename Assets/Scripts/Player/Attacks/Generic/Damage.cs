@@ -6,22 +6,21 @@ using UnityEngine.Events;
 [RequireComponent(typeof(BoxCollider2D))]
 public class Damage : MonoBehaviour
 {
-    public float damage;
+    public float DamageAmount;
 
-    private Player player;
+    private Player _player;
 
     [Header("Event")]
-    [SerializeField] protected UnityEvent damageEvent;
+    [SerializeField] protected UnityEvent _damageEvent;
 
     private void Awake()
     {
-        player = Player.GetInstance();
+        _player = Player.GetInstance();
     }
 
     #region Damage Enemy on Collision
     /// <summary>
     /// Checks if the target that's been hit has an IDamageable script attached.
-    /// If it does, damage the target.
     /// </summary>
     /// <param name="collision">The collider the attack collided with</param>
     protected virtual void OnTriggerEnter2D(Collider2D collision)
@@ -31,9 +30,9 @@ public class Damage : MonoBehaviour
         if (collision.gameObject.TryGetComponent<IDamageable>(out damageable) && !collision.CompareTag(Player.GetInstance().tag))
         {
             //Does Damage to damageable
-            damageable.DoDamage(damage * player.constantDamageModifier);
+            damageable.DoDamage(DamageAmount * _player.ConstantDamageModifier);
 
-            damageEvent?.Invoke();
+            _damageEvent?.Invoke();
         }
     }
     #endregion

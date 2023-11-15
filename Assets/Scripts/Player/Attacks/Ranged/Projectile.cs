@@ -12,14 +12,14 @@ public class Projectile : PoolItem
     }
 
     [Header("Stats")]
-    [SerializeField] private float speed;
-    public float damage;
+    [SerializeField] private float _speed;
+    public float Damage;
 
     [Header("Life Timer")]
-    [SerializeField] private float lifeTime;
+    [SerializeField] private float _lifeTime;
 
     [Header("Break Type")]
-    public ProjectileBreakType breakType;
+    public ProjectileBreakType BreakType;
 
     private void OnEnable()
     {
@@ -37,7 +37,7 @@ public class Projectile : PoolItem
     /// </summary>
     private IEnumerator DestroyProjectileTimer()
     {
-        WaitForSeconds wait = new WaitForSeconds(lifeTime);
+        WaitForSeconds wait = new WaitForSeconds(_lifeTime);
 
         yield return wait;
 
@@ -51,7 +51,7 @@ public class Projectile : PoolItem
     /// </summary>
     private void MoveProjectile()
     {
-        transform.position += transform.up * speed * Time.deltaTime;
+        transform.position += transform.up * _speed * Time.deltaTime;
     }
     #endregion
 
@@ -63,7 +63,7 @@ public class Projectile : PoolItem
     private void OnTriggerEnter2D(Collider2D collision)
     {
         IEnemy enemy;
-        if (collision.TryGetComponent<IEnemy>(out enemy) && breakType == ProjectileBreakType.hit)
+        if (collision.TryGetComponent<IEnemy>(out enemy) && BreakType == ProjectileBreakType.hit)
         {
             Die();
         }

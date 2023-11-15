@@ -8,17 +8,17 @@ public class ObjectPool : MonoBehaviour
     /// Item type that's in this ObjectPool
     /// Item type decided in inspector
     /// </summary>
-    public GameObject pooledObject;
+    public GameObject PooledObject;
     /// <summary>
     /// Amount of items that can be in ObjectPool
     /// </summary>
-    public int poolSize;
+    public int PoolSize;
 
     [Tooltip("Set this to true if you want to expand the pool if you run out of pooled objects.")]
-    [SerializeField] private bool autoExpand;
+    [SerializeField] private bool _autoExpand;
 
     [Tooltip("The amount of new objects added when the pool runs out of objects.")]
-    [SerializeField] private int expansionSize;
+    [SerializeField] private int _expansionSize;
 
     /// <summary>
     /// The Stack that holds the ObjectPool's items
@@ -30,9 +30,9 @@ public class ObjectPool : MonoBehaviour
     /// </summary>
     private void OnEnable()
     {
-        _objectPool = new Stack<PoolItem>(poolSize);
+        _objectPool = new Stack<PoolItem>(PoolSize);
 
-        Expand(poolSize);
+        Expand(PoolSize);
     }
 
     #region Instantiate pooledObjects
@@ -45,9 +45,9 @@ public class ObjectPool : MonoBehaviour
     {
         for (int i = 0; i < expansionSize; i++)
         {
-            GameObject newObject = Instantiate(pooledObject);
+            GameObject newObject = Instantiate(PooledObject);
             PoolItem item = newObject.GetComponent<PoolItem>();
-            item.pool = this;
+            item.Pool = this;
             ReturnPooledObject(item);
         }
     }
@@ -65,9 +65,9 @@ public class ObjectPool : MonoBehaviour
     public GameObject GetPooledObject(Vector3 position, Quaternion rotation, Transform parent = null)
     {
         // Adds expansionSize to ObjectPool when it's empty
-        if (_objectPool.Count == 0 && autoExpand)
+        if (_objectPool.Count == 0 && _autoExpand)
         {
-            Expand(expansionSize);
+            Expand(_expansionSize);
         }
 
         PoolItem item = _objectPool.Pop();

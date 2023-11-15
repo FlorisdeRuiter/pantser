@@ -7,31 +7,29 @@ using UnityEngine.Events;
 public class Player : MonoBehaviour, IDamageable
 {
     [Header("Health")]
-    [SerializeField] private float maxHealth;
-    [SerializeField] private float health;
+    [SerializeField] private float _maxHealth;
+    [SerializeField] private float _health;
 
     [Header("Ability")]
-    public float constantDamageModifier = 0;
-    public float constantIntervalModifier = 0;
-    public float constantCooldownModifier = 0;
+    public float ConstantDamageModifier = 0;
+    public float ConstantIntervalModifier = 0;
+    public float ConstantCooldownModifier = 0;
 
     [Header("Event")]
-    public UnityEvent damageEvent;
+    public UnityEvent DamageEvent;
 
     private static Player _instance;
 
     private void Start()
     {
-        health = maxHealth;
+        _health = _maxHealth;
     }
 
-    #region Do Damage
     public void DoDamage(float damage)
     {
-        health -= damage;
-        damageEvent?.Invoke();
+        _health -= damage;
+        DamageEvent?.Invoke();
     }
-    #endregion
 
     #region Returns Tag
     public string GetPlayerTag()

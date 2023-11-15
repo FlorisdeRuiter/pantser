@@ -16,34 +16,34 @@ public class RangedAttack : MonoBehaviour, IAbility
     }
 
     [Header("Attack Configurations")]
-    [SerializeField] private float baseDamage;
-    [SerializeField] private float baseAttackInterval;
+    [SerializeField] private float _baseDamage;
+    [SerializeField] private float _baseAttackInterval;
 
     [Header("Enemy Target Type")]
-    [SerializeField] TargetType targetType;
+    [SerializeField] private TargetType _targetType;
 
     [Header("Event")]
-    [SerializeField] private UnityEvent attackEvent;
+    [SerializeField] private UnityEvent _attackEvent;
 
     [Header("Object Pool")]
-    private ObjectPool projectilePool;
-    private List<Projectile> projectileList;
+    private ObjectPool _projectilePool;
+    private List<Projectile> _projectileList;
 
     [Header("Animation")]
-    private Animator anim;
-    private readonly string attackTrigger = "attack";
+    private Animator _anim;
+    private readonly string _attackTrigger = "attack";
 
     [Header("Target Finder")]
-    private NearbyEnemiesCheck nearbyEnemies;
+    private NearbyEnemiesCheck _nearbyEnemiesChecker;
 
     private Player player;
 
     private void Awake()
     {
         player = Player.GetInstance();
-        nearbyEnemies = NearbyEnemiesCheck.GetInstance();
-        anim = GetComponent<Animator>();
-        projectilePool = GetComponentInChildren<ObjectPool>();
+        _nearbyEnemiesChecker = NearbyEnemiesCheck.GetInstance();
+        _anim = GetComponent<Animator>();
+        _projectilePool = GetComponentInChildren<ObjectPool>();
     }
 
     private void OnEnable()
@@ -58,7 +58,7 @@ public class RangedAttack : MonoBehaviour, IAbility
     /// </summary>
     public void OnAttack()
     {
-        attackEvent?.Invoke();
+        _attackEvent?.Invoke();
     }
 
     /// <summary>
@@ -69,13 +69,13 @@ public class RangedAttack : MonoBehaviour, IAbility
     {
         Transform target = null;
 
-        switch (targetType)
+        switch (_targetType)
         {
             case TargetType.closestTarget:
-                target = nearbyEnemies.GetNearestEnemy();
+                target = _nearbyEnemiesChecker.GetNearestEnemy();
                 break;
             case TargetType.randomTarget:
-                target = nearbyEnemies.GetRandomEnemy();
+                target = _nearbyEnemiesChecker.GetRandomEnemy();
                 break;
             case TargetType.randomDirection:
                 target = null;
@@ -88,42 +88,38 @@ public class RangedAttack : MonoBehaviour, IAbility
         {
             Vector3 targetPos = target.position;
 
-            //Checks what direction the target is in
+            // Checks what direction the target is in
             targetPos.x = targetPos.x - spawnPos.x;
             targetPos.y = targetPos.y - spawnPos.y;
             targetPos.z = 0;
 
-            //Calculates projectile's angle to target the enemy
+            // Calculates projectile's angle to target the enemy
             float angle = Mathf.Atan2(-targetPos.x, targetPos.y) * Mathf.Rad2Deg;
             Quaternion rot = Quaternion.Euler(new Vector3(0, 0, angle));
 
-            GameObject e = projectilePool.GetPooledObject(transform.position, transform.rotation) as GameObject;
+            GameObject e = _projectilePool.GetPooledObject(transform.position, transform.rotation) as GameObject;
             e.transform.position = spawnPos;
             e.transform.rotation = rot;
         }
         else
         {
+            // Shoots projectile in a random direction if there were no available enemies
             float angle = Mathf.Atan2(Random.Range(-1f,1f), Random.Range(-1f, 1f)) * Mathf.Rad2Deg;
             Quaternion rot = Quaternion.Euler(new Vector3(0, 0, angle));
 
-            GameObject e = projectilePool.GetPooledObject(transform.position, transform.rotation) as GameObject;
+            GameObject e = _projectilePool.GetPooledObject(transform.position, transform.rotation) as GameObject;
             e.transform.position = spawnPos;
             e.transform.rotation = rot;
         }
     }
 
-    /// <summary>
-    /// Activates the attack's animation
-    /// Triggers attackEvent
-    /// </summary>
-    /// <returns></returns>
     private IEnumerator Attack()
     {
-        WaitForSeconds wait = new WaitForSeconds(baseAttackInterval * player.constantIntervalModifier);
+        WaitForSeconds wait = new WaitForSeconds(_baseAttackInterval * player.ConstantIntervalModifier);
 
         yield return wait;
 
-        anim.SetTrigger(attackTrigger);
+        _anim.SetTrigger(_attackTrigger);
         OnAttack();
 
         StartCoroutine(Attack());
@@ -132,17 +128,17 @@ public class RangedAttack : MonoBehaviour, IAbility
 
     public void UpdateAttackConfigs(float damageMod, float intervalMod)
     {
-        baseDamage = damageMod;
-        foreach (Transform projectile in projectilePool.transform)
+        _baseDamage = damageMod;
+        foreach (Transform projectile in _projectilePool.transform)
         {
-            projectile.GetComponent<Projectile>().damage = baseDamage * player.constantDamageModifier;
+            projectile.GetComponent<Projectile>().Damage = _baseDamage * player.ConstantDamageModifier;
         }
-        baseAttackInterval = intervalMod;
+        _baseAttackInterval = intervalMod;
     }
 
     public void SetConfig(Modification pModification)
     {
-        baseDamage = pModification.Damage;
-        baseAttackInterval = pModification.Interval;
+        _baseDamage = pModification.Damage;
+        _baseAttackInterval = pModification.Interval;
     }
 }

@@ -5,32 +5,26 @@ using UnityEngine;
 [RequireComponent(typeof(CircleCollider2D))]
 public class Shield : MonoBehaviour
 {
-    public int maxHitsToBreak;
-    public int hitsToBreak;
+    public int MaxHitsToBreak;
+    public int HitsToBreak;
 
     private void OnEnable()
     {
-        hitsToBreak = maxHitsToBreak;
+        HitsToBreak = MaxHitsToBreak;
     }
 
-    /// <summary>
-    /// Removes charge from shield
-    /// Disables Utility if no charges are left
-    /// Kills enemy
-    /// </summary>
-    /// <param name="collision">The collider the shield collides with</param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
         IEnemy enemy;
         if (collision.TryGetComponent<IEnemy>(out enemy))
         {
-            hitsToBreak -= 1;
-            if (hitsToBreak <= 0)
+            //Removes charge from shield
+            HitsToBreak -= 1;
+            if (HitsToBreak <= 0)
             {
+                //Disables shield if no charges are left
                 GetComponentInParent<Utility>().DisableChildren();
             }
-
-            enemy.Die();
         }
     }
 }

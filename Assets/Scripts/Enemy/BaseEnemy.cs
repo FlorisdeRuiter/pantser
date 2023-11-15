@@ -5,33 +5,33 @@ using UnityEngine;
 [RequireComponent(typeof(CircleCollider2D))]
 public class BaseEnemy : PoolItem, IEnemy, IDamageable
 {
-    private Player player;
-    [SerializeField] private EnemyScriptableStats scriptableStats;
+    private Player _player;
+    [SerializeField] private EnemyScriptableStats _scriptableStats;
 
     [Header("Health")]
-    [SerializeField] private float currentHealth;
-    [SerializeField] private float maxHealth;
+    [SerializeField] private float _currentHealth;
+    [SerializeField] private float _maxHealth;
 
     [Header("Damage")]
-    [SerializeField] private float damage;
+    [SerializeField] private float _damage;
 
     [Header("Speed")]
-    [SerializeField] private float chaseSpeed;
+    [SerializeField] private float _chaseSpeed;
 
-    private ObjectPool expPool;
+    private ObjectPool _expPool;
 
     protected override void Activate()
     {
         SetEnemyStats();
-        player = Player.GetInstance();
-        currentHealth = maxHealth;
-        expPool = _myPool.GetComponent<SetEnemyExpPool>().expPool;
+        _player = Player.GetInstance();
+        _currentHealth = _maxHealth;
+        _expPool = _myPool.GetComponent<SetEnemyExpPool>().expPool;
     }
 
     private void Update()
     {
         MoveTowardsTarget();
-        if (currentHealth <= 0)
+        if (_currentHealth <= 0)
         {
             Die();
         }
@@ -41,38 +41,41 @@ public class BaseEnemy : PoolItem, IEnemy, IDamageable
     public virtual void MoveTowardsTarget()
     {
         //Sets target
-        Vector2 targetPos = player.GetTransform().position;
+        Vector2 targetPos = _player.GetTransform().position;
 
         //Moves enemy towards target
-        transform.position = Vector2.MoveTowards(transform.position, targetPos, chaseSpeed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, targetPos, _chaseSpeed * Time.deltaTime);
     }
     #endregion
 
     #region Damage Player 
     /// <summary>
     /// Damages player when enemy collides with it.
-    /// Kills enemy when it collides with player.
     /// </summary>
     /// <param name="collision">The player's collider</param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
         IDamageable damageable;
-        if (collision.CompareTag(player.tag) && collision.gameObject.TryGetComponent<IDamageable>(out damageable))
+        if (collision.CompareTag(_player.tag) && collision.gameObject.TryGetComponent<IDamageable>(out damageable))
         {
-            damageable.DoDamage(damage);
-            DoDamage(currentHealth);
+            damageable.DoDamage(_damage);
         }
     }
     #endregion
 
-    #region Damage
+    #region IDamageable
     /// <summary>
     /// Damages enemy.
     /// </summary>
     /// <param name="damage">Value taken from the current health</param>
     public void DoDamage(float damage)
     {
-        currentHealth -= damage;
+        _currentHealth -= damage;
+    }
+
+    public Transform GetTransform()
+    {
+        return transform;
     }
     #endregion
 
@@ -93,21 +96,15 @@ public class BaseEnemy : PoolItem, IEnemy, IDamageable
     /// </summary>
     private void SetEnemyStats()
     {
-        maxHealth = scriptableStats.maxHealth;
-        damage = scriptableStats.damage;
-        chaseSpeed = scriptableStats.chaseSpeed;
-    }
-    #endregion
-
-    #region Returns Transform
-    public Transform GetTransform()
-    {
-        return transform;
+        _maxHealth = _scriptableStats.MaxHealth;
+        _damage = _scriptableStats.Damage;
+        _chaseSpeed = _scriptableStats.ChaseSpeed;
     }
     #endregion
 
     public void OnDropExp()
     {
-        expPool.GetPooledObject(transform.position, transform.rotation, expPool.gameObject.transform); 
+        // Takes exp from the object pool and places it on the enemy's location
+        _expPool.GetPooledObject(transform.position, transform.rotation, _expPool.gameObject.transform); 
     }
 }

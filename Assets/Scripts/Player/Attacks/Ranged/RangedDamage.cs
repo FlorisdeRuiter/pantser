@@ -9,6 +9,6 @@ public class RangedDamage : Damage
     private void Start()
     {
         projectile = GetComponent<Projectile>();
-        damage = projectile.damage;
+        DamageAmount = projectile.Damage;
     }
 }

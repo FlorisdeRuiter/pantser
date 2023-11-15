@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public List<ObjectPool> enemyPoolList;
-    private EnemySpawner spawner;
+    public List<ObjectPool> EnemyPoolList;
+    private EnemySpawner _spawner;
 
     private static GameManager _instance;
 
     private void Start()
     {
-        spawner = EnemySpawner.GetInstance();
-        enemyPoolList = spawner.enemyPoolsList;
+        _spawner = EnemySpawner.GetInstance();
+        EnemyPoolList = _spawner.EnemyPoolsList;
     }
 
     public static GameManager GetInstance()

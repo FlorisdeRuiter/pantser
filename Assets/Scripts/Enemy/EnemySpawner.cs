@@ -9,28 +9,28 @@ public class EnemySpawner : MonoBehaviour
     private Player player;
 
     [Header("Enemy Types")]
-    public List<ObjectPool> enemyPoolsList;                             //List of all enemyPools in game
-    [SerializeField] private List<ObjectPool> currentEnemyPoolsList;    //List of current enemy types eligible for spawning
+    public List<ObjectPool> EnemyPoolsList;                             //List of all enemyPools in game
+    [SerializeField] private List<ObjectPool> _currentEnemiesInPoolsList;//List of current enemy types eligible for spawning
     [Tooltip("Seconds between adding new enemy pool to spawner")]
-    [SerializeField, Range(0, 300)] private float addEnemyPoolInterval; //Interval between adding enemy type to list
+    [SerializeField, Range(0, 300)] private float _addEnemyPoolInterval; //Interval between adding enemy type to list
 
     [Header("Enemy Spawn Intervals")]
-    [SerializeField, Range(0, 5)] private float spawnInterval;          //Interval between enemies spawning
+    [SerializeField, Range(0, 5)] private float _spawnInterval;          //Interval between enemies spawning
 
     [Header("Spawn Rate")]
     [Tooltip("Interval between spawn rate increases")]
-    [SerializeField, Range(0, 10)] private float spawnRateInterval;     //Interval between spawn rate increases
+    [SerializeField, Range(0, 10)] private float _spawnRateInterval;     //Interval between spawn rate increases
     [Tooltip("Amount spawnRateInterval deacreases by")]
-    [SerializeField, Range(0f, 1f)] private float spawnRateIncrease;    //Amount spawnRateInterval deacreases by
+    [SerializeField, Range(0f, 1f)] private float _spawnRateIncrease;    //Amount spawnRateInterval deacreases by
 
     [Header("Enemy Spawn Offset")]
-    [SerializeField, Range(0f, 1f)] private float offsetX, offsetY;
+    [SerializeField, Range(0f, 1f)] private float _offsetX, _offsetY;
 
     private void Start()
     {
         player = Player.GetInstance();
         StartCoroutine(SpawnEnemy(GetSpawnPosition()));
-        StartCoroutine(IncreaseSpawnRate(spawnRateInterval, spawnRateIncrease));
+        StartCoroutine(IncreaseSpawnRate(_spawnRateInterval, _spawnRateIncrease));
         StartCoroutine(AddEnemyTypeCor());
     }
 
@@ -43,15 +43,19 @@ public class EnemySpawner : MonoBehaviour
     /// <param name="spawnPos">Position the enemy will spawn in</param>
     private IEnumerator SpawnEnemy(Vector2 spawnPos)
     {
-        WaitForSeconds wait = new WaitForSeconds(spawnInterval);
+        WaitForSeconds wait = new WaitForSeconds(_spawnInterval);
 
         yield return wait;
 
-        ObjectPool currentPool = currentEnemyPoolsList[Random.Range(0, currentEnemyPoolsList.Count)];
+        // Selects a random enemy type to spawn
+        ObjectPool currentPool = _currentEnemiesInPoolsList[Random.Range(0, _currentEnemiesInPoolsList.Count)];
+
+        // Spawns enemy and sets its position
         GameObject e = currentPool.GetPooledObject(transform.position, transform.rotation, currentPool.gameObject.transform) as GameObject;
         e.transform.position = spawnPos;
         e.transform.rotation = Quaternion.identity;
 
+        // Restarts the spawn cycle
         StartCoroutine(SpawnEnemy(GetSpawnPosition()));
     }
 
@@ -72,17 +76,17 @@ public class EnemySpawner : MonoBehaviour
             posX = Mathf.Round(posX);
 
             if (posX == 0)
-                posX -= offsetX;
+                posX -= _offsetX;
             else
-                posX += offsetX;
+                posX += _offsetX;
         }
         else
         {
             posY = Mathf.Round(posY);
             if (posY == 0)
-                posY -= offsetY;
+                posY -= _offsetY;
             else
-                posY += offsetY;
+                posY += _offsetY;
         }
         #endregion
 
@@ -96,18 +100,17 @@ public class EnemySpawner : MonoBehaviour
     /// <summary>
     /// Adds a new enemy type to the pool after an interval.
     /// </summary>
-    /// <returns></returns>
     private IEnumerator AddEnemyTypeCor()
     {
-        WaitForSeconds wait = new WaitForSeconds(addEnemyPoolInterval);
+        WaitForSeconds wait = new WaitForSeconds(_addEnemyPoolInterval);
 
         yield return wait;
 
-        int newEnemyListNumber = currentEnemyPoolsList.Count;
+        int newEnemyListNumber = _currentEnemiesInPoolsList.Count;
 
-        if (newEnemyListNumber < enemyPoolsList.Count)
+        if (newEnemyListNumber < EnemyPoolsList.Count)
         {
-            ObjectPool newEnemyList = enemyPoolsList[newEnemyListNumber];
+            ObjectPool newEnemyList = EnemyPoolsList[newEnemyListNumber];
             newEnemyList.gameObject.SetActive(true);
             AddEnemyTypeToSpawner(newEnemyList);
             StartCoroutine(AddEnemyTypeCor());
@@ -116,7 +119,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void AddEnemyTypeToSpawner(ObjectPool enemyType)
     {
-        currentEnemyPoolsList.Add(enemyType);
+        _currentEnemiesInPoolsList.Add(enemyType);
     }
     #endregion
 
@@ -133,9 +136,9 @@ public class EnemySpawner : MonoBehaviour
 
         yield return wait;
 
-        spawnInterval -= decrease / 1000;
+        _spawnInterval -= decrease / 1000;
 
-        StartCoroutine(IncreaseSpawnRate(spawnRateInterval, spawnRateIncrease));
+        StartCoroutine(IncreaseSpawnRate(_spawnRateInterval, _spawnRateIncrease));
     }
     #endregion
 

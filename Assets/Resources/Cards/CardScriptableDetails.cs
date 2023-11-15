@@ -6,24 +6,24 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Card Details", menuName = "ScriptableObject/Card Details", order = 1)]
 public class CardScriptableDetails : ScriptableObject
 {
-    public string cardName;
-    public string cardInfo;
+    public string CardName;
+    public string CardInfo;
 
-    public int cardStage;
-    public int baseCardStage = 0;
+    public int CardStage;
+    public int BaseCardStage = 0;
 
-    public Texture cardSprite;
+    public Texture CardSprite;
 
-    public string abilityName;
+    public string AbilityName;
 
-    public EAbilities abilityType;
+    public EAbilities AbilityType;
 
     public List<Modification> Modifications;
 
-    public GameObject abilityObject;
+    public GameObject AbilityObject;
 
     private void OnEnable()
     {
-        cardStage = baseCardStage;
+        CardStage = BaseCardStage;
     }
 }

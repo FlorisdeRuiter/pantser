@@ -5,26 +5,25 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    private int currentLevel;
-
     private static LevelManager _instance;
-
-    private int cardsNeededOnLevelUp;
-
-    private CardManager cardManager;
-
-    private List<Card> cardsOnUI;
+    private CardManager _cardManager;
+    private List<Card> _cardsOnUI;
+    private int _currentLevel;
+    private int _cardsNeededOnLevelUp;
 
     private void Start()
     {
-        cardManager = CardManager.GetInstance();
+        _cardManager = CardManager.GetInstance();
     }
 
+    /// <summary>
+    /// Updates the player level and displays cards
+    /// </summary>
     public void LevelUp()
     {
-        currentLevel += 1;
+        _currentLevel += 1;
 
-        cardManager.DisplayCards();
+        _cardManager.DisplayCards();
     }
 
     #region Get Instance

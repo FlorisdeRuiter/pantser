@@ -6,34 +6,39 @@ using UnityEngine;
 
 public class CardManager : MonoBehaviour
 {
-    public List<Card> cards;
+    public List<Card> Cards;
+    public List<CardScriptableDetails> CardDetailsList;
 
     private static CardManager _instance;
 
-    public List<CardScriptableDetails> cardDetailsList;
 
     private void Start()
     {
-        cardDetailsList = Resources.LoadAll<CardScriptableDetails>("Cards").ToList();
+        // Loads all the cards from the resources file into a list
+        CardDetailsList = Resources.LoadAll<CardScriptableDetails>("Cards").ToList();
     }
 
+    /// <summary>
+    /// Returns a random set of cards
+    /// </summary>
+    /// <param name="cardsNeeded">Amount of cards you want returned</param>
+    /// <returns></returns>
     public List<CardScriptableDetails> GetRandomCards(int cardsNeeded)
     {
         List<CardScriptableDetails> selectedCards = new List<CardScriptableDetails>();
 
         int returnAmount;
 
-        if (cardDetailsList.Count < cardsNeeded)
-        {
-            returnAmount = cardDetailsList.Count;
-            Debug.Log("???");
-        }
+        // Changes the amount of cards that are returned depending on of their are enough available
+        if (CardDetailsList.Count < cardsNeeded)
+            returnAmount = CardDetailsList.Count;
         else
             returnAmount = cardsNeeded;
 
+        // Selects an amount equal to returnAmount of random cards to return
         for (int i = 0; i < returnAmount; i++)
         {
-            CardScriptableDetails cardToAdd = cardDetailsList[Random.Range(0, cardDetailsList.Count)];
+            CardScriptableDetails cardToAdd = CardDetailsList[Random.Range(0, CardDetailsList.Count)];
 
             if (selectedCards.Contains(cardToAdd))
                 returnAmount += 1;
@@ -43,22 +48,31 @@ public class CardManager : MonoBehaviour
         return selectedCards;
     }
 
+    /// <summary>
+    /// Displays cards the player can choose from
+    /// </summary>
     public void DisplayCards()
     {
+        // Pauses the game
         Time.timeScale = 0;
-        List<CardScriptableDetails> cardsToDisplay = GetRandomCards(cards.Count);
+        List<CardScriptableDetails> cardsToDisplay = GetRandomCards(Cards.Count);
+
+        // Sets the details of the displayed card equal to those of the randomly selected card
         for (int i = 0; i < cardsToDisplay.Count; i++)
         {
-            cards[i].SetCardDetails(cardsToDisplay[i]);
-            cards[i].gameObject.SetActive(true);
+            Cards[i].SetCardDetails(cardsToDisplay[i]);
+            Cards[i].gameObject.SetActive(true);
         }
     }
 
+    /// <summary>
+    /// Removes cards from the screen
+    /// </summary>
     public void Removecards()
     {
-        for (int i = 0; i < cards.Count; i++)
+        for (int i = 0; i < Cards.Count; i++)
         {
-            cards[i].gameObject.SetActive(false);
+            Cards[i].gameObject.SetActive(false);
         }
     }
 

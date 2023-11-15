@@ -6,63 +6,69 @@ using TMPro;
 
 public class Card : MonoBehaviour
 {
-    private CardScriptableDetails cardType;
+    private CardScriptableDetails _cardType;
 
-    [SerializeField] private TextMeshProUGUI cardName;
-    [SerializeField] private TextMeshProUGUI cardInfo;
-    [SerializeField] private RawImage cardSprite;
+    [SerializeField] private TextMeshProUGUI _cardName;
+    [SerializeField] private TextMeshProUGUI _cardInfo;
+    [SerializeField] private RawImage _cardSprite;
 
-    private CardManager cardManager;
+    private CardManager _cardManager;
 
     private void Awake()
     {
-        cardManager = CardManager.GetInstance();
+        _cardManager = CardManager.GetInstance();
     }
 
     public void SetCardDetails(CardScriptableDetails details)
     {
-        cardType = details;
-        cardName.text = details.cardName;
-        cardInfo.text = details.cardInfo;
-        cardSprite.texture = details.cardSprite;  
+        _cardType = details;
+        _cardName.text = details.CardName;
+        _cardInfo.text = details.CardInfo;
+        _cardSprite.texture = details.CardSprite;  
     }
 
     public void OnPickCard()
     {
         GameObject abilityObject = new GameObject();
 
-        if (cardType.cardStage == 0)
+        if (_cardType.CardStage == 0)
         {
+            // Adds a new ability if the picked ability wasn't active yet
             AddNewAbility();
         }
         else
         {
-            abilityObject = GameObject.Find(cardType.abilityName);
-            abilityObject.GetComponent<IAbility>().SetConfig(cardType.Modifications[cardType.cardStage]);
+            // Upgrades a abilities stats if it was already active and player picked it again
+            abilityObject = GameObject.Find(_cardType.AbilityName);
+            abilityObject.GetComponent<IAbility>().SetConfig(_cardType.Modifications[_cardType.CardStage]);
         }
 
-        cardType.cardStage += 1;
+        _cardType.CardStage += 1;
         Time.timeScale = 1;
-        cardManager.Removecards();
+        _cardManager.Removecards();
     }
 
     private void AddNewAbility()
     {
+        // Finds a parent object for the new ability
         GameObject abilityObject;
-        GameObject abilityParent = GameObject.Find(cardType.abilityType.ToString());
+        GameObject abilityParent = GameObject.Find(_cardType.AbilityType.ToString());
 
         if (abilityParent != null)
         {
+            // Creates a parent object if none are available
             Player player = FindObjectOfType<Player>();
-            abilityParent = new GameObject(cardType.abilityType.ToString());
+            abilityParent = new GameObject(_cardType.AbilityType.ToString());
 
+            // Adds the parent object to the player
             abilityParent.transform.parent = player.transform;
             abilityParent.transform.localPosition = Vector3.zero;
             abilityParent.transform.rotation = player.transform.rotation;
         }
 
-        abilityObject = Instantiate(cardType.abilityObject, abilityParent.transform.position, Quaternion.identity);
+        // Adds the ability object to the parent object
+        abilityObject = Instantiate(_cardType.AbilityObject, abilityParent.transform.position, Quaternion.identity);
         abilityObject.transform.parent = abilityParent.transform;
-        abilityObject.name = cardType.abilityName;
+        abilityObject.name = _cardType.AbilityName;
     }
 }

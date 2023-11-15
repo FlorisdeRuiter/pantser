@@ -7,26 +7,26 @@ using UnityEngine.Events;
 public class MeleeAttack : MonoBehaviour, IAbility
 {
     [Header("Attack Configurations")]
-    public float baseDamage;
-    [SerializeField] private float baseAttackInterval;
+    public float BaseDamage;
+    [SerializeField] private float _baseAttackInterval;
 
     [Header("Event")]
-    [SerializeField] private UnityEvent attackEvent;
+    [SerializeField] private UnityEvent _attackEvent;
 
     [Header("Animation")]
-    private Animator anim;
-    private readonly string attackTrigger = "attack";
+    private Animator _anim;
+    private readonly string _attackTrigger = "attack";
 
     public Damage Damage;
 
-    private Player player;
+    private Player _player;
 
     private void Awake()
     {
-        player = Player.GetInstance();
-        anim = GetComponent<Animator>();
+        _player = Player.GetInstance();
+        _anim = GetComponent<Animator>();
         Damage = GetComponentInChildren<Damage>();
-        Damage.damage = baseDamage;
+        Damage.DamageAmount = BaseDamage;
     }
 
     private void OnEnable()
@@ -35,26 +35,20 @@ public class MeleeAttack : MonoBehaviour, IAbility
     }
 
     #region Attack
-    /// <summary>
-    /// What event does is decided in the inspector.
-    /// This event is meant for inplementing all effects besides damage.
-    /// </summary>
     public void OnAttack()
     {
-        attackEvent?.Invoke();
+        _attackEvent?.Invoke();
     }
 
-    /// <summary>
-    /// Activates the attack's animation.
-    /// Triggers attackEvent.
-    /// </summary>
     private IEnumerator Attack()
     {
-        WaitForSeconds wait = new WaitForSeconds(baseAttackInterval * player.constantIntervalModifier);
+        // Sets wait to the attack interval
+        WaitForSeconds wait = new WaitForSeconds(_baseAttackInterval * _player.ConstantIntervalModifier);
 
         yield return wait;
 
-        anim.SetTrigger(attackTrigger);
+        // Plays attack animation
+        _anim.SetTrigger(_attackTrigger);
         OnAttack();
 
         StartCoroutine(Attack());
@@ -62,10 +56,6 @@ public class MeleeAttack : MonoBehaviour, IAbility
     #endregion
 
     #region Collider toggle
-    /// <summary>
-    /// Toggles the collider on or off depending on it's current state.
-    /// This function is called at the start and end of the attack's animation.
-    /// </summary>
     private void ToggleCollider()
     {
         BoxCollider2D collider = GetComponentInChildren<BoxCollider2D>();
@@ -75,7 +65,7 @@ public class MeleeAttack : MonoBehaviour, IAbility
 
     public void SetConfig(Modification pModification)
     {
-        baseDamage = pModification.Damage;
-        baseAttackInterval = pModification.Interval;
+        BaseDamage = pModification.Damage;
+        _baseAttackInterval = pModification.Interval;
     }
 }
