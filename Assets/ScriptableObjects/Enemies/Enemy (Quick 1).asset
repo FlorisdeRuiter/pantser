@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7286ee4876226d044b270762250a7810, type: 3}
   m_Name: Enemy (Quick 1)
   m_EditorClassIdentifier: 
-  maxHealth: 5
-  damage: 5
-  chaseSpeed: 3
+  MaxHealth: 2
+  Damage: 2
+  ChaseSpeed: 5

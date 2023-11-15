@@ -119,7 +119,7 @@ public class RangedAttack : MonoBehaviour, IAbility
 
         yield return wait;
 
-        _anim.SetTrigger(_attackTrigger);
+        //_anim.SetTrigger(_attackTrigger);
         OnAttack();
 
         StartCoroutine(Attack());

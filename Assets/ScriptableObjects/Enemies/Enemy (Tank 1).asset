@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7286ee4876226d044b270762250a7810, type: 3}
   m_Name: Enemy (Tank 1)
   m_EditorClassIdentifier: 
-  maxHealth: 50
-  damage: 10
-  chaseSpeed: 0.5
+  MaxHealth: 50
+  Damage: 20
+  ChaseSpeed: 1

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7286ee4876226d044b270762250a7810, type: 3}
   m_Name: Enemy (Melee 1)
   m_EditorClassIdentifier: 
-  maxHealth: 10
-  damage: 5
-  chaseSpeed: 1
+  MaxHealth: 10
+  Damage: 5
+  ChaseSpeed: 2

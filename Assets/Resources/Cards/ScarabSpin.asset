@@ -12,14 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c06e209953439d4409f8770890965bcc, type: 3}
   m_Name: ScarabSpin
   m_EditorClassIdentifier: 
-  cardName: Scarab Spin
-  cardInfo: The beetle will summon a golden sword and spins it around itself, dealing
-    massive damage to enemies.
-  cardStage: 0
-  baseCardStage: 0
-  cardSprite: {fileID: 2800000, guid: 65e09921abed5c9479f2d9a4f1486f16, type: 3}
-  abilityName: ScarabSpin
-  abilityType: 0
+  CardName: Scarab Spin
+  CardInfo: Beetle summons a sword and spins around
+  CardStage: 0
+  BaseCardStage: 0
+  CardSprite: {fileID: 2800000, guid: 65e09921abed5c9479f2d9a4f1486f16, type: 3}
+  AbilityName: ScarabSpin
+  AbilityType: 0
   Modifications:
   - Damage: 5
     Interval: 1
@@ -37,4 +36,4 @@ MonoBehaviour:
     Interval: 1
     Downtime: 0
     Uptime: 0
-  abilityObject: {fileID: 4861706444531354122, guid: 0229378741586764c8d79e87e3df224e, type: 3}
+  AbilityObject: {fileID: 4861706444531354122, guid: 0229378741586764c8d79e87e3df224e, type: 3}

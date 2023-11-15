@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &17549145 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8815128236944182938, guid: a48fb16fc2dc00746940d7bdf3cd9240, type: 3}
+  m_PrefabInstance: {fileID: 130101130}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &38764162
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,6 +296,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 8}
   m_EdgeRadius: 0
+--- !u!114 &114623762 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8815128236224264872, guid: a48fb16fc2dc00746940d7bdf3cd9240, type: 3}
+  m_PrefabInstance: {fileID: 1115030082}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &126485168
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,6 +451,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 8815128236690537368, guid: a48fb16fc2dc00746940d7bdf3cd9240, type: 3}
+      propertyPath: _cardInfo
+      value: 
+      objectReference: {fileID: 1757551882}
+    - target: {fileID: 8815128236690537368, guid: a48fb16fc2dc00746940d7bdf3cd9240, type: 3}
+      propertyPath: _cardName
+      value: 
+      objectReference: {fileID: 1217753769}
+    - target: {fileID: 8815128236690537368, guid: a48fb16fc2dc00746940d7bdf3cd9240, type: 3}
+      propertyPath: _cardSprite
+      value: 
+      objectReference: {fileID: 17549145}
     - target: {fileID: 8815128236690537369, guid: a48fb16fc2dc00746940d7bdf3cd9240, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -941,10 +975,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 767bedc4492b42c4e8c3d13bb58f59a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledObject: {fileID: 8805429980878525236, guid: 283b5ab5d8acfdb449f3c465cb7c0391, type: 3}
-  poolSize: 250
-  autoExpand: 1
-  expansionSize: 10
+  PooledObject: {fileID: 8805429980878525236, guid: 283b5ab5d8acfdb449f3c465cb7c0391, type: 3}
+  PoolSize: 250
+  _autoExpand: 1
+  _expansionSize: 10
 --- !u!4 &260649503
 Transform:
   m_ObjectHideFlags: 0
@@ -991,6 +1025,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &299080475 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8815128236235536033, guid: a48fb16fc2dc00746940d7bdf3cd9240, type: 3}
+  m_PrefabInstance: {fileID: 1115030082}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &319449041
 GameObject:
   m_ObjectHideFlags: 0
@@ -3420,6 +3465,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 8815128236690537368, guid: a48fb16fc2dc00746940d7bdf3cd9240, type: 3}
+      propertyPath: _cardInfo
+      value: 
+      objectReference: {fileID: 114623762}
+    - target: {fileID: 8815128236690537368, guid: a48fb16fc2dc00746940d7bdf3cd9240, type: 3}
+      propertyPath: _cardName
+      value: 
+      objectReference: {fileID: 299080475}
+    - target: {fileID: 8815128236690537368, guid: a48fb16fc2dc00746940d7bdf3cd9240, type: 3}
+      propertyPath: _cardSprite
+      value: 
+      objectReference: {fileID: 2053160238}
     - target: {fileID: 8815128236690537369, guid: a48fb16fc2dc00746940d7bdf3cd9240, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3633,6 +3690,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 612159639}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1217753769 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8815128236235536033, guid: a48fb16fc2dc00746940d7bdf3cd9240, type: 3}
+  m_PrefabInstance: {fileID: 130101130}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1234391224
 GameObject:
   m_ObjectHideFlags: 0
@@ -3747,10 +3815,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 767bedc4492b42c4e8c3d13bb58f59a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledObject: {fileID: 7238915641427217762, guid: f79d3af8dd5c6834187ea3f2b72c4288, type: 3}
-  poolSize: 100
-  autoExpand: 1
-  expansionSize: 1
+  PooledObject: {fileID: 7238915641427217762, guid: f79d3af8dd5c6834187ea3f2b72c4288, type: 3}
+  PoolSize: 100
+  _autoExpand: 1
+  _expansionSize: 1
 --- !u!4 &1237553304
 Transform:
   m_ObjectHideFlags: 0
@@ -3991,11 +4059,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1af93127dbc381846ac597582d0f4450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cards:
+  Cards:
   - {fileID: 1195768127}
   - {fileID: 1115030084}
   - {fileID: 130101132}
-  cardDetailsList: []
+  CardDetailsList: []
 --- !u!1 &1400588142
 GameObject:
   m_ObjectHideFlags: 0
@@ -4357,6 +4425,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 612159639}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1570464834 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8815128236944182938, guid: a48fb16fc2dc00746940d7bdf3cd9240, type: 3}
+  m_PrefabInstance: {fileID: 8815128237709558439}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1588684195
 GameObject:
   m_ObjectHideFlags: 0
@@ -4847,6 +4926,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 612159639}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1756988866 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8815128236235536033, guid: a48fb16fc2dc00746940d7bdf3cd9240, type: 3}
+  m_PrefabInstance: {fileID: 8815128237709558439}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1757551882 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8815128236224264872, guid: a48fb16fc2dc00746940d7bdf3cd9240, type: 3}
+  m_PrefabInstance: {fileID: 130101130}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1764411299
 GameObject:
   m_ObjectHideFlags: 0
@@ -5140,10 +5241,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 767bedc4492b42c4e8c3d13bb58f59a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledObject: {fileID: 7238915641427217762, guid: 19a1f3816bd33844a992dad7401c1d9f, type: 3}
-  poolSize: 100
-  autoExpand: 1
-  expansionSize: 1
+  PooledObject: {fileID: 7238915641427217762, guid: 19a1f3816bd33844a992dad7401c1d9f, type: 3}
+  PoolSize: 100
+  _autoExpand: 1
+  _expansionSize: 1
 --- !u!114 &1812935775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5156,7 +5257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c36cae69d0627a42b73756110b3c450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  expPool: {fileID: 0}
+  expPool: {fileID: 260649502}
 --- !u!1 &1846788553
 GameObject:
   m_ObjectHideFlags: 0
@@ -5287,6 +5388,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 8}
   m_EdgeRadius: 0
+--- !u!114 &1854993434 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8815128236224264872, guid: a48fb16fc2dc00746940d7bdf3cd9240, type: 3}
+  m_PrefabInstance: {fileID: 8815128237709558439}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1983752239
 GameObject:
   m_ObjectHideFlags: 0
@@ -5371,6 +5483,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 612159639}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2053160238 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8815128236944182938, guid: a48fb16fc2dc00746940d7bdf3cd9240, type: 3}
+  m_PrefabInstance: {fileID: 1115030082}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2067350408
 GameObject:
   m_ObjectHideFlags: 0
@@ -5484,18 +5607,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f530a1a77901c3e47b71143b7ec13f3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPoolsList:
+  EnemyPoolsList:
   - {fileID: 1237553303}
   - {fileID: 1812935774}
   - {fileID: 2092085408}
-  currentEnemyPoolsList:
+  _currentEnemiesInPoolsList:
   - {fileID: 1237553303}
-  addEnemyPoolInterval: 1
-  spawnInterval: 0.2
-  spawnRateInterval: 2.5
-  spawnRateIncrease: 1
-  offsetX: 0.15
-  offsetY: 0.25
+  _addEnemyPoolInterval: 60
+  _spawnInterval: 0.8
+  _spawnRateInterval: 2.5
+  _spawnRateIncrease: 1
+  _offsetX: 0.15
+  _offsetY: 0.25
 --- !u!4 &2088756803
 Transform:
   m_ObjectHideFlags: 0
@@ -5556,10 +5679,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 767bedc4492b42c4e8c3d13bb58f59a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledObject: {fileID: 7238915641427217762, guid: ca8759144085cc345abe858362c98265, type: 3}
-  poolSize: 100
-  autoExpand: 1
-  expansionSize: 1
+  PooledObject: {fileID: 7238915641427217762, guid: ca8759144085cc345abe858362c98265, type: 3}
+  PoolSize: 100
+  _autoExpand: 1
+  _expansionSize: 1
 --- !u!114 &2092085409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5572,7 +5695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c36cae69d0627a42b73756110b3c450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  expPool: {fileID: 0}
+  expPool: {fileID: 260649502}
 --- !u!1 &2105475023
 GameObject:
   m_ObjectHideFlags: 0
@@ -5701,7 +5824,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73c9f09fbc0a87f478db5ed875bf40aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPoolList: []
+  EnemyPoolList:
+  - {fileID: 1237553303}
+  - {fileID: 1812935774}
+  - {fileID: 2092085408}
 --- !u!1 &2140240179
 GameObject:
   m_ObjectHideFlags: 0
@@ -5788,6 +5914,10 @@ PrefabInstance:
       propertyPath: walkSpeed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 141077714295902976, guid: a853d32ff090ec5478e7ee32587eb176, type: 3}
+      propertyPath: _walkSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 141077714295902979, guid: a853d32ff090ec5478e7ee32587eb176, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5832,9 +5962,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 571281385578269611, guid: a853d32ff090ec5478e7ee32587eb176, type: 3}
+      propertyPath: BaseDamage
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 571281385578269611, guid: a853d32ff090ec5478e7ee32587eb176, type: 3}
+      propertyPath: _baseAttackInterval
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5960472753596859927, guid: a853d32ff090ec5478e7ee32587eb176, type: 3}
+      propertyPath: _maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5960472753596859927, guid: a853d32ff090ec5478e7ee32587eb176, type: 3}
+      propertyPath: ConstantDamageModifier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5960472753596859927, guid: a853d32ff090ec5478e7ee32587eb176, type: 3}
+      propertyPath: ConstantCooldownModifier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5960472753596859927, guid: a853d32ff090ec5478e7ee32587eb176, type: 3}
+      propertyPath: ConstantIntervalModifier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5960472753596859927, guid: a853d32ff090ec5478e7ee32587eb176, type: 3}
+      propertyPath: DamageEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5960472753596859927, guid: a853d32ff090ec5478e7ee32587eb176, type: 3}
+      propertyPath: DamageEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6596269891531504595, guid: a853d32ff090ec5478e7ee32587eb176, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6014,6 +6176,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 8815128236690537368, guid: a48fb16fc2dc00746940d7bdf3cd9240, type: 3}
+      propertyPath: _cardInfo
+      value: 
+      objectReference: {fileID: 1854993434}
+    - target: {fileID: 8815128236690537368, guid: a48fb16fc2dc00746940d7bdf3cd9240, type: 3}
+      propertyPath: _cardName
+      value: 
+      objectReference: {fileID: 1756988866}
+    - target: {fileID: 8815128236690537368, guid: a48fb16fc2dc00746940d7bdf3cd9240, type: 3}
+      propertyPath: _cardSprite
+      value: 
+      objectReference: {fileID: 1570464834}
     - target: {fileID: 8815128236690537369, guid: a48fb16fc2dc00746940d7bdf3cd9240, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

@@ -131,11 +131,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 922c8e2bcb56dc7488bc9db5ccbeedca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scriptableStats: {fileID: 11400000, guid: 821143116cabbbd4081e602986c943d5, type: 2}
-  currentHealth: 0
-  maxHealth: 0
-  damage: 0
-  chaseSpeed: 0
+  _scriptableStats: {fileID: 11400000, guid: 821143116cabbbd4081e602986c943d5, type: 2}
+  _currentHealth: 0
+  _maxHealth: 0
+  _damage: 0
+  _chaseSpeed: 0
 --- !u!58 &7238915641427217767
 CircleCollider2D:
   m_ObjectHideFlags: 0

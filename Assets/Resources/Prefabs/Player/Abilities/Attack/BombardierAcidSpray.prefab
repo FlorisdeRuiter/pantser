@@ -24,13 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4486636072444441467}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4486636073472476564}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4486636072444441445
 MonoBehaviour:
@@ -44,10 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 767bedc4492b42c4e8c3d13bb58f59a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledObject: {fileID: 1879494531106713356, guid: 3d8623a0b158a5644acb0ede5d48979b, type: 3}
-  poolSize: 10
-  autoExpand: 1
-  expansionSize: 1
+  PooledObject: {fileID: 1879494531106713356, guid: 3d8623a0b158a5644acb0ede5d48979b, type: 3}
+  PoolSize: 5
+  _autoExpand: 1
+  _expansionSize: 2
 --- !u!1 &4486636073472476565
 GameObject:
   m_ObjectHideFlags: 0
@@ -73,6 +73,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4486636073472476565}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -80,7 +81,6 @@ Transform:
   m_Children:
   - {fileID: 4486636072444441466}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4486636073472476561
 MonoBehaviour:
@@ -94,10 +94,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8265711d86005f54ca17efc30d6c7daf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 10
-  baseAttackInterval: 2
-  targetType: 0
-  attackEvent:
+  _baseDamage: 10
+  _baseAttackInterval: 2
+  _targetType: 0
+  _attackEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4486636073472476561}
@@ -114,7 +114,7 @@ MonoBehaviour:
         m_CallState: 2
 --- !u!95 &4486636073472476566
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -131,4 +131,5 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
