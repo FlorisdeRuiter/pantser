@@ -166,6 +166,51 @@ Transform:
   - {fileID: 669052068}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &49581304
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 49581305}
+  - component: {fileID: 49581306}
+  m_Layer: 0
+  m_Name: AbilityManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &49581305
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49581304}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1646520645}
+  m_Father: {fileID: 1764411300}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &49581306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49581304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be0fc1d589463f24e90e178c87fcb552, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &90606247
 GameObject:
   m_ObjectHideFlags: 0
@@ -4712,6 +4757,68 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1646520644
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 49581305}
+    m_Modifications:
+    - target: {fileID: 4486636073472476564, guid: 0451812dbcd89364c9dfeebb5291068e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4486636073472476564, guid: 0451812dbcd89364c9dfeebb5291068e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4486636073472476564, guid: 0451812dbcd89364c9dfeebb5291068e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4486636073472476564, guid: 0451812dbcd89364c9dfeebb5291068e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4486636073472476564, guid: 0451812dbcd89364c9dfeebb5291068e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4486636073472476564, guid: 0451812dbcd89364c9dfeebb5291068e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4486636073472476564, guid: 0451812dbcd89364c9dfeebb5291068e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4486636073472476564, guid: 0451812dbcd89364c9dfeebb5291068e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4486636073472476564, guid: 0451812dbcd89364c9dfeebb5291068e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4486636073472476564, guid: 0451812dbcd89364c9dfeebb5291068e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4486636073472476565, guid: 0451812dbcd89364c9dfeebb5291068e, type: 3}
+      propertyPath: m_Name
+      value: BombardierAcidSpray
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0451812dbcd89364c9dfeebb5291068e, type: 3}
+--- !u!4 &1646520645 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4486636073472476564, guid: 0451812dbcd89364c9dfeebb5291068e, type: 3}
+  m_PrefabInstance: {fileID: 1646520644}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1697793065
 GameObject:
   m_ObjectHideFlags: 0
@@ -4980,6 +5087,7 @@ Transform:
   - {fileID: 2121004116}
   - {fileID: 2140240180}
   - {fileID: 1334560099}
+  - {fileID: 49581305}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1767228820
@@ -5838,7 +5946,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2140240180}
   - component: {fileID: 2140240181}
-  - component: {fileID: 2140240182}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -5873,13 +5980,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0d3b8cddc906fb4f8859a3ab27bfd9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentExp: 0
-  expNeededForLevelUp: 100
-  levelUpEvent:
+  _currentExp: 0
+  _requiredExpForLevelUp: 1
+  _requiredExpModifier: 1
+  _currentLevel: 0
+  _levelUpEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2140240182}
-        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+      - m_Target: {fileID: 2140240181}
+        m_TargetAssemblyTypeName: ExperienceManager, Assembly-CSharp
         m_MethodName: LevelUp
         m_Mode: 1
         m_Arguments:
@@ -5890,18 +5999,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2140240182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2140240179}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 359037d22f91c3443b3d6a9cfca8ceb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+      - m_Target: {fileID: 1334560100}
+        m_TargetAssemblyTypeName: CardManager, Assembly-CSharp
+        m_MethodName: DisplayCards
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2140240181}
+        m_TargetAssemblyTypeName: ExperienceManager, Assembly-CSharp
+        m_MethodName: IncreaseRequiredExp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &141077715743779838
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5953,6 +6074,10 @@ PrefabInstance:
     - target: {fileID: 141077714295902980, guid: a853d32ff090ec5478e7ee32587eb176, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 571281385578269611, guid: a853d32ff090ec5478e7ee32587eb176, type: 3}
+      propertyPath: BaseDamage
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5488624279138452552, guid: a853d32ff090ec5478e7ee32587eb176, type: 3}
       propertyPath: m_Layer
