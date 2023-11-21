@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(Animator))]
-public class RangedAttack : MonoBehaviour, IAbility
+public class RangedAttack : Ability, IAbility
 {
     public enum TargetType
     {
@@ -36,11 +36,11 @@ public class RangedAttack : MonoBehaviour, IAbility
     [Header("Target Finder")]
     private NearbyEnemiesCheck _nearbyEnemiesChecker;
 
-    private Player player;
+    private Player _player;
 
     private void Awake()
     {
-        player = Player.GetInstance();
+        _player = Player.GetInstance();
         _nearbyEnemiesChecker = NearbyEnemiesCheck.GetInstance();
         _anim = GetComponent<Animator>();
         _projectilePool = GetComponentInChildren<ObjectPool>();
@@ -82,7 +82,7 @@ public class RangedAttack : MonoBehaviour, IAbility
                 break;
         }
 
-        Vector3 spawnPos = transform.position;
+        Vector3 spawnPos = _player.transform.position;
 
         if (target != null)
         {
@@ -115,7 +115,7 @@ public class RangedAttack : MonoBehaviour, IAbility
 
     private IEnumerator Attack()
     {
-        WaitForSeconds wait = new WaitForSeconds(_baseAttackInterval * player.ConstantIntervalModifier);
+        WaitForSeconds wait = new WaitForSeconds(_baseAttackInterval * _player.ConstantIntervalModifier);
 
         yield return wait;
 
@@ -131,7 +131,7 @@ public class RangedAttack : MonoBehaviour, IAbility
         _baseDamage = damageMod;
         foreach (Transform projectile in _projectilePool.transform)
         {
-            projectile.GetComponent<Projectile>().Damage = _baseDamage * player.ConstantDamageModifier;
+            projectile.GetComponent<Projectile>().Damage = _baseDamage * _player.ConstantDamageModifier;
         }
         _baseAttackInterval = intervalMod;
     }

@@ -29,46 +29,35 @@ public class Card : MonoBehaviour
 
     public void OnPickCard()
     {
-        GameObject abilityObject = new GameObject();
-
-        if (_cardType.CardStage == 0)
+        if (_cardType is AbilityCardDetails _abilityCard)
         {
-            // Adds a new ability if the picked ability wasn't active yet
-            AddNewAbility();
+            GameObject abilityObject;
+
+            if (_abilityCard.CardStage == 0)
+            {
+                // Adds a new ability if the picked ability wasn't active yet
+                AbilityManager.GetInstance().AddNewAbility(_abilityCard);
+            }
+            else
+            {
+                // Upgrades a abilities stats if it was already active and player picked it again
+                abilityObject = GameObject.Find(_abilityCard.AbilityName);
+                abilityObject.GetComponent<IAbility>().SetConfig(_abilityCard.Modifications[_abilityCard.CardStage]);
+            }
+
+            _abilityCard.CardStage += 1;
+
+            if (_abilityCard.CardStage >= _abilityCard.Modifications.Count)
+            {
+                _cardManager.RemoveCardFromAvailableList(_cardType);
+            }
         }
-        else
+        else if (_cardType is StatCardDetails _statCard)
         {
-            // Upgrades a abilities stats if it was already active and player picked it again
-            abilityObject = GameObject.Find(_cardType.AbilityName);
-            abilityObject.GetComponent<IAbility>().SetConfig(_cardType.Modifications[_cardType.CardStage]);
+
         }
 
-        _cardType.CardStage += 1;
         Time.timeScale = 1;
-        _cardManager.Removecards();
-    }
-
-    private void AddNewAbility()
-    {
-        // Finds a parent object for the new ability
-        GameObject abilityObject;
-        GameObject abilityParent = GameObject.Find(_cardType.AbilityType.ToString());
-
-        if (abilityParent != null)
-        {
-            // Creates a parent object if none are available
-            Player player = FindObjectOfType<Player>();
-            abilityParent = new GameObject(_cardType.AbilityType.ToString());
-
-            // Adds the parent object to the player
-            abilityParent.transform.parent = player.transform;
-            abilityParent.transform.localPosition = Vector3.zero;
-            abilityParent.transform.rotation = player.transform.rotation;
-        }
-
-        // Adds the ability object to the parent object
-        abilityObject = Instantiate(_cardType.AbilityObject, abilityParent.transform.position, Quaternion.identity);
-        abilityObject.transform.parent = abilityParent.transform;
-        abilityObject.name = _cardType.AbilityName;
+        _cardManager.RemoveDisplayedCards();
     }
 }

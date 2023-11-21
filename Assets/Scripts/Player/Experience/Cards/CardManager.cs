@@ -11,7 +11,6 @@ public class CardManager : MonoBehaviour
 
     private static CardManager _instance;
 
-
     private void Start()
     {
         // Loads all the cards from the resources file into a list
@@ -68,12 +67,17 @@ public class CardManager : MonoBehaviour
     /// <summary>
     /// Removes cards from the screen
     /// </summary>
-    public void Removecards()
+    public void RemoveDisplayedCards()
     {
         for (int i = 0; i < Cards.Count; i++)
         {
             Cards[i].gameObject.SetActive(false);
         }
+    }
+
+    public void RemoveCardFromAvailableList(CardScriptableDetails card)
+    {
+        CardDetailsList.Remove(card);
     }
 
     #region Get Instance

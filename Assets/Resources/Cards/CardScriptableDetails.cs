@@ -14,14 +14,6 @@ public class CardScriptableDetails : ScriptableObject
 
     public Texture CardSprite;
 
-    public string AbilityName;
-
-    public EAbilities AbilityType;
-
-    public List<Modification> Modifications;
-
-    public GameObject AbilityObject;
-
     private void OnEnable()
     {
         CardStage = BaseCardStage;

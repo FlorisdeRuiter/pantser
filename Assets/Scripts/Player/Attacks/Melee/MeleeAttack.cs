@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(Animator))]
-public class MeleeAttack : MonoBehaviour, IAbility
+public class MeleeAttack : Ability, IAbility
 {
     [Header("Attack Configurations")]
     public float BaseDamage;
@@ -27,6 +27,11 @@ public class MeleeAttack : MonoBehaviour, IAbility
         _anim = GetComponent<Animator>();
         Damage = GetComponentInChildren<Damage>();
         Damage.DamageAmount = BaseDamage;
+    }
+
+    private void Update()
+    {
+        transform.position = _player.transform.position;
     }
 
     private void OnEnable()

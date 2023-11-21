@@ -1,6 +1,6 @@
 using System;
 
-public enum EModifications
+public enum EAbilityModifications
 {
     Damage,
     Interval,
@@ -16,14 +16,14 @@ public class Modification
     public float Downtime;
     public float Uptime;
 
-    public float GetValue(EModifications pModification)
+    public float GetValue(EAbilityModifications pModification)
     {
         return pModification switch
         {
-            EModifications.Damage => Damage,
-            EModifications.Interval => Interval,
-            EModifications.Uptime => Uptime,
-            EModifications.Downtime => Downtime,
+            EAbilityModifications.Damage => Damage,
+            EAbilityModifications.Interval => Interval,
+            EAbilityModifications.Uptime => Uptime,
+            EAbilityModifications.Downtime => Downtime,
             _ => throw new NotImplementedException()
         };
     }
