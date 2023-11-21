@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
-public class ExpPoint : PoolItem
+public class ExpPoint : PoolItem, IPickupable
 {
     private Player player;
     private ExperienceManager experienceManager;
@@ -16,12 +16,9 @@ public class ExpPoint : PoolItem
         experienceManager = ExperienceManager.GetInstance();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void PickUp()
     {
-        if (collision.CompareTag(player.GetPlayerTag()))
-        {
-            experienceManager.OnGainExp(expValue);
-            ReturnToPool();
-        }
+        experienceManager.OnGainExp(expValue);
+        ReturnToPool();
     }
 }

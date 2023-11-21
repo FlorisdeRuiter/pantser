@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
     private Player player;
 
     [Header("Enemy Types")]
-    public List<ObjectPool> EnemyPoolsList;                             //List of all enemyPools in game
+    public List<ObjectPool> EnemyPoolsList;                              //List of all enemyPools in game
     [SerializeField] private List<ObjectPool> _currentEnemiesInPoolsList;//List of current enemy types eligible for spawning
     [Tooltip("Seconds between adding new enemy pool to spawner")]
     [SerializeField, Range(0, 300)] private float _addEnemyPoolInterval; //Interval between adding enemy type to list

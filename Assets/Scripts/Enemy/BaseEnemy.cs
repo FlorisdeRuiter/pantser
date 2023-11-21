@@ -6,7 +6,7 @@ using UnityEngine;
 public class BaseEnemy : PoolItem, IEnemy, IDamageable
 {
     private Player _player;
-    [SerializeField] private EnemyScriptableStats _scriptableStats;
+    [SerializeField] private EnemyScriptableData _scriptableStats;
 
     [Header("Health")]
     [SerializeField] private float _currentHealth;
