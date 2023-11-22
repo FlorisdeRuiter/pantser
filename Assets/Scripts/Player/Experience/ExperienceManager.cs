@@ -18,7 +18,13 @@ public class ExperienceManager : MonoBehaviour
     [SerializeField] private UnityEvent _levelUpEvent;
 
     private static ExperienceManager _instance;
+    private UiManager _uiManager;
 
+    private void Start()
+    {
+        _uiManager = UiManager.GetInstance();
+        _uiManager.ExpUiBar.UpdateExperienceBar(_currentExp, _requiredExpForLevelUp);
+    }
 
     public void OnGainExp(float expGained)
     {
@@ -34,16 +40,14 @@ public class ExperienceManager : MonoBehaviour
             // Stores excess experience
             _currentExp = excessExp;
 
+            _currentLevel += 1;
+
             _levelUpEvent?.Invoke();
         }
-    }
 
-    /// <summary>
-    /// Updates the player level and displays cards
-    /// </summary>
-    public void LevelUp()
-    {
-        _currentLevel += 1;
+        _uiManager.ExpUiBar.UpdateExperienceBar(_currentExp, _requiredExpForLevelUp);
+
+        GameManager.GetInstance().IncreaseScore(5);
     }
 
     public void IncreaseRequiredExp()

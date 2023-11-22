@@ -7,13 +7,35 @@ public class GameManager : MonoBehaviour
 {
     public List<ObjectPool> EnemyPoolList;
     private EnemySpawner _spawner;
+    private UiManager _uiManager;
 
     private static GameManager _instance;
+
+    private float _score;
+    private float _gameTime;
 
     private void Start()
     {
         _spawner = EnemySpawner.GetInstance();
         EnemyPoolList = _spawner.EnemyPoolsList;
+        _uiManager = UiManager.GetInstance();
+    }
+
+    private void Update()
+    {
+        IncreaseTimer();
+    }
+
+    public void IncreaseTimer()
+    {
+        _gameTime += Time.deltaTime;
+        _uiManager.TimeUiText.UpdateTimeUi(_gameTime);
+    }
+
+    public void IncreaseScore(float value)
+    {
+        _score += value;
+        _uiManager.ScoreUiText.UpdateScoreUi(_score);
     }
 
     public static GameManager GetInstance()

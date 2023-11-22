@@ -18,17 +18,22 @@ public class Player : MonoBehaviour, IDamageable
     [Header("Event")]
     public UnityEvent DamageEvent;
 
+    private UiManager _uiManager;
+
     private static Player _instance;
 
     private void Start()
     {
         _health = _maxHealth;
+        _uiManager = UiManager.GetInstance();
+        _uiManager.HealthUiBar.UpdateHealthBar(_health, _maxHealth);
     }
 
     public void DoDamage(float damage)
     {
         _health -= damage;
         DamageEvent?.Invoke();
+        _uiManager.HealthUiBar.UpdateHealthBar(_health, _maxHealth);
     }
 
     #region Returns Tag
