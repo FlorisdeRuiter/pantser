@@ -15,6 +15,23 @@ public class CardManager : MonoBehaviour
     {
         // Loads all the cards from the resources file into a list
         CardDetailsList = Resources.LoadAll<CardScriptableDetails>("Cards").ToList();
+
+        foreach (CardScriptableDetails card in CardDetailsList)
+        {
+            if (card.ActivateOnStart)
+            {
+                if (card.BaseCardStage <= 0)
+                    card.CardStage = 1;
+                else
+                    card.CardStage = card.BaseCardStage;
+
+                if (card is AbilityCardDetails abilityCard)
+                {
+                    AbilityManager.GetInstance().AddNewAbility(abilityCard);
+                    abilityCard.AbilityObject.GetComponent<Ability>().Name = abilityCard.AbilityName;
+                }
+            }
+        }
     }
 
     /// <summary>

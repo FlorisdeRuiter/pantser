@@ -12,7 +12,22 @@ public class AbilityManager : MonoBehaviour
         // Adds the ability object to the parent object
         GameObject abilityObject = Instantiate(card.AbilityObject, transform);
 
-        abilityObject.GetComponent<IAbility>().SetConfig(card.Modifications[card.CardStage]);
+        if (card.CardStage >= card.Modifications.Count)
+        {
+            abilityObject.GetComponent<IAbility>().SetConfig(card.Modifications[card.CardStage]);
+        }
+    }
+
+    public GameObject GetAbilityObject(string name)
+    {
+        foreach (Ability ability in GetComponentsInChildren<Ability>())
+        {
+            if (ability.Name == name)
+            {
+                return ability.gameObject;
+            }
+        }
+        return null;
     }
 
     #region Get Instance

@@ -7,6 +7,8 @@ public class Ability : MonoBehaviour
     [Header("Ability Base Class")]
     [SerializeField] private List<Transform> _childrenList;
 
+    public string Name;
+
     private void Start()
     {
         //Puts all children under parent in a list

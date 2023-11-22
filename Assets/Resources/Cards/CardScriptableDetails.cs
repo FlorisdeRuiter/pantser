@@ -14,6 +14,8 @@ public class CardScriptableDetails : ScriptableObject
 
     public Texture CardSprite;
 
+    public bool ActivateOnStart;
+
     private void OnEnable()
     {
         CardStage = BaseCardStage;
