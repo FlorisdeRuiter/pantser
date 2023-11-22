@@ -7,7 +7,7 @@ public class UiBar : MonoBehaviour
 {
     protected Slider _bar;
 
-    private void Start()
+    private void Awake()
     {
         _bar = GetComponent<Slider>();
     }
