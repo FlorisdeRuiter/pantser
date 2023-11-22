@@ -24,11 +24,14 @@ public class CardManager : MonoBehaviour
                     card.CardStage = 1;
                 else
                     card.CardStage = card.BaseCardStage;
+            }
+            if (card is AbilityCardDetails abilityCard)
+            {
+                abilityCard.AbilityObject.GetComponent<Ability>().Name = abilityCard.AbilityName;
 
-                if (card is AbilityCardDetails abilityCard)
+                if (card.ActivateOnStart)
                 {
                     AbilityManager.GetInstance().AddNewAbility(abilityCard);
-                    abilityCard.AbilityObject.GetComponent<Ability>().Name = abilityCard.AbilityName;
                 }
             }
         }
