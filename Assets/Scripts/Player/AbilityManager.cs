@@ -6,11 +6,13 @@ using UnityEngine;
 public class AbilityManager : MonoBehaviour
 {
     private static AbilityManager _instance;
+    [SerializeField] private List<Ability> _abilities;
     
     public void AddNewAbility(AbilityCardDetails card)
     {
         // Adds the ability object to the parent object
         GameObject abilityObject = Instantiate(card.AbilityObject, transform);
+        _abilities.Add(abilityObject.GetComponent<Ability>());
 
         if (card.CardStage >= card.Modifications.Count)
         {
@@ -20,7 +22,7 @@ public class AbilityManager : MonoBehaviour
 
     public GameObject GetAbilityObject(string name)
     {
-        foreach (Ability ability in GetComponentsInChildren<Ability>())
+        foreach (Ability ability in _abilities)
         {
             if (ability.Name == name)
             {
