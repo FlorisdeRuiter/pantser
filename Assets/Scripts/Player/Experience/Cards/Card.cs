@@ -29,30 +29,30 @@ public class Card : MonoBehaviour
 
     public void OnPickCard()
     {
-        if (_cardType is AbilityCardDetails _abilityCard)
+        if (_cardType is AbilityCardDetails abilityCard)
         {
             GameObject abilityObject;
 
-            if (_abilityCard.CardStage == 0)
+            if (abilityCard.CardStage == 0)
             {
                 // Adds a new ability if the picked ability wasn't active yet
-                AbilityManager.GetInstance().AddNewAbility(_abilityCard);
+                AbilityManager.GetInstance().AddNewAbility(abilityCard);
             }
             else
             {
                 // Upgrades a abilities stats if it was already active and player picked it again
-                abilityObject = GameObject.Find(_abilityCard.AbilityName);
-                abilityObject.GetComponent<IAbility>().SetConfig(_abilityCard.Modifications[_abilityCard.CardStage]);
+                abilityObject = AbilityManager.GetInstance().GetAbilityObject(abilityCard.AbilityName);
+                abilityObject.GetComponent<IAbility>().SetConfig(abilityCard.Modifications[abilityCard.CardStage]);
             }
 
-            _abilityCard.CardStage += 1;
+            abilityCard.CardStage += 1;
 
-            if (_abilityCard.CardStage >= _abilityCard.Modifications.Count)
+            if (abilityCard.CardStage >= abilityCard.Modifications.Count)
             {
                 _cardManager.RemoveCardFromAvailableList(_cardType);
             }
         }
-        else if (_cardType is StatCardDetails _statCard)
+        else if (_cardType is StatCardDetails statCard)
         {
 
         }

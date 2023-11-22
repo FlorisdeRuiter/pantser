@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardName: Bombardier Acid Spray
   CardInfo: Sprays acid on the field
-  CardStage: 0
+  CardStage: 1
   BaseCardStage: 0
   CardSprite: {fileID: 2800000, guid: e422ea04d31b363458c091426a243157, type: 3}
+  ActivateOnStart: 1
   AbilityName: BombardierAcidSpray
   AbilityType: 1
   Modifications:
@@ -25,6 +26,10 @@ MonoBehaviour:
     Downtime: 0
     Uptime: 0
   - Damage: 10
+    Interval: 0.7
+    Downtime: 0
+    Uptime: 0
+  - Damage: 15
     Interval: 0.7
     Downtime: 0
     Uptime: 0
