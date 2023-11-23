@@ -8,8 +8,6 @@ public class CardManager : MonoBehaviour
 {
     public List<Card> Cards;
     public List<CardScriptableDetails> CardDetailsList;
-    public List<AbilityCardDetails> AbilityCardDetailsList;
-    public List<StatCardDetails> StatCardDetailsList;
 
     private static CardManager _instance;
 
@@ -27,20 +25,14 @@ public class CardManager : MonoBehaviour
                 else
                     card.CardStage = card.BaseCardStage;
             }
-
             if (card is AbilityCardDetails abilityCard)
             {
                 abilityCard.AbilityObject.GetComponent<Ability>().Name = abilityCard.AbilityName;
-                AbilityCardDetailsList.Add(abilityCard);
 
                 if (card.ActivateOnStart)
                 {
                     AbilityManager.GetInstance().AddNewAbility(abilityCard);
                 }
-            }
-            else if (card is StatCardDetails statCard)
-            {
-                StatCardDetailsList.Add(statCard);
             }
         }
     }
