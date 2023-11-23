@@ -6,7 +6,7 @@ using UnityEngine;
 public class BaseEnemy : PoolItem, IEnemy, IDamageable
 {
     private Player _player;
-    [SerializeField] private EnemyScriptableData _scriptableStats;
+    public EnemyScriptableData StatData;
 
     [Header("Health")]
     [SerializeField] private float _currentHealth;
@@ -18,14 +18,19 @@ public class BaseEnemy : PoolItem, IEnemy, IDamageable
     [Header("Speed")]
     [SerializeField] private float _chaseSpeed;
 
-    private ObjectPool _expPool;
+    [SerializeField] private ObjectPool _expPool;
+
+    private void Start()
+    {
+        _expPool = SetEnemyExpPool.GetInstance().ExpPool;
+    }
 
     protected override void Activate()
     {
         SetEnemyStats();
         _player = Player.GetInstance();
         _currentHealth = _maxHealth;
-        _expPool = _myPool.GetComponent<SetEnemyExpPool>().expPool;
+        EnemySpawner.GetInstance().CurrentEnemyValue += StatData.Value;
     }
 
     private void Update()
@@ -87,6 +92,8 @@ public class BaseEnemy : PoolItem, IEnemy, IDamageable
     {
         ReturnToPool();
         OnDropExp();
+        GameManager.GetInstance().IncreaseScore(StatData.Value);
+        EnemySpawner.GetInstance().CurrentEnemyValue -= StatData.Value;
     }
     #endregion
 
@@ -96,15 +103,15 @@ public class BaseEnemy : PoolItem, IEnemy, IDamageable
     /// </summary>
     private void SetEnemyStats()
     {
-        _maxHealth = _scriptableStats.MaxHealth;
-        _damage = _scriptableStats.Damage;
-        _chaseSpeed = _scriptableStats.ChaseSpeed;
+        _maxHealth = StatData.MaxHealth;
+        _damage = StatData.Damage;
+        _chaseSpeed = StatData.ChaseSpeed;
     }
     #endregion
 
     public void OnDropExp()
     {
         // Takes exp from the object pool and places it on the enemy's location
-        _expPool.GetPooledObject(transform.position, transform.rotation, _expPool.gameObject.transform); 
+        _expPool.GetPooledObject(transform.position, transform.rotation, _expPool.gameObject.transform);
     }
 }

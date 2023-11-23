@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 922c8e2bcb56dc7488bc9db5ccbeedca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scriptableStats: {fileID: 11400000, guid: ee3d19a9f8122524b83678f3868007bd, type: 2}
+  StatData: {fileID: 11400000, guid: ee3d19a9f8122524b83678f3868007bd, type: 2}
   _currentHealth: 0
   _maxHealth: 0
   _damage: 0

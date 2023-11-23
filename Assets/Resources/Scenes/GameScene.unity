@@ -4502,7 +4502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c36cae69d0627a42b73756110b3c450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  expPool: {fileID: 260649502}
+  ExpPool: {fileID: 260649502}
 --- !u!1 &1241741966
 GameObject:
   m_ObjectHideFlags: 0
@@ -6535,7 +6535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c36cae69d0627a42b73756110b3c450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  expPool: {fileID: 260649502}
+  ExpPool: {fileID: 0}
 --- !u!1 &1829559684
 GameObject:
   m_ObjectHideFlags: 0
@@ -7018,6 +7018,8 @@ MonoBehaviour:
   _spawnInterval: 0.8
   _spawnRateInterval: 2.5
   _spawnRateIncrease: 1
+  CurrentEnemyValue: 0
+  _maxAllowedEnemyValue: 5
   _offsetX: 0.15
   _offsetY: 0.25
 --- !u!4 &2088756803
@@ -7096,7 +7098,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c36cae69d0627a42b73756110b3c450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  expPool: {fileID: 260649502}
+  ExpPool: {fileID: 0}
 --- !u!1 &2105475023
 GameObject:
   m_ObjectHideFlags: 0
@@ -7225,10 +7227,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73c9f09fbc0a87f478db5ed875bf40aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyPoolList:
-  - {fileID: 1237553303}
-  - {fileID: 1812935774}
-  - {fileID: 2092085408}
 --- !u!1 &2134315937
 GameObject:
   m_ObjectHideFlags: 0

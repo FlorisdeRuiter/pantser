@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public List<ObjectPool> EnemyPoolList;
-    private EnemySpawner _spawner;
     private UiManager _uiManager;
 
     private static GameManager _instance;
@@ -16,8 +14,6 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        _spawner = EnemySpawner.GetInstance();
-        EnemyPoolList = _spawner.EnemyPoolsList;
         _uiManager = UiManager.GetInstance();
     }
 
