@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class GameManager : MonoBehaviour
 
     private float _score;
     private float _gameTime;
+
+    [SerializeField] private SceneLoadData _pauseMenu;
 
     private void Start()
     {
@@ -32,6 +35,16 @@ public class GameManager : MonoBehaviour
     {
         _score += value;
         _uiManager.ScoreUiText.UpdateScoreUi(_score);
+    }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+    }
+
+    public void UnpauseGame()
+    {
+        Time.timeScale = 1;
     }
 
     public static GameManager GetInstance()

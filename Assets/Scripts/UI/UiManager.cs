@@ -9,6 +9,7 @@ public class UiManager : MonoBehaviour
     public TimeUiText TimeUiText;
     public HealthUiBar HealthUiBar;
     public ExpUiBar ExpUiBar;
+
     private static UiManager _instance;
 
     public static UiManager GetInstance()

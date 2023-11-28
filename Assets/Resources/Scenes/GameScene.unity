@@ -7022,6 +7022,7 @@ MonoBehaviour:
   _maxAllowedEnemyValue: 5
   _offsetX: 0.15
   _offsetY: 0.25
+  _movement: {fileID: 0}
 --- !u!4 &2088756803
 Transform:
   m_ObjectHideFlags: 0
@@ -7227,6 +7228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73c9f09fbc0a87f478db5ed875bf40aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pauseMenu: {fileID: 11400000, guid: 015bc32eadb880648b1bee58fd4be360, type: 2}
 --- !u!1 &2134315937
 GameObject:
   m_ObjectHideFlags: 0
