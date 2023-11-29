@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private SceneLoadData _pauseMenu;
 
+
+
     private void Start()
     {
         _uiManager = UiManager.GetInstance();
@@ -35,16 +37,6 @@ public class GameManager : MonoBehaviour
     {
         _score += value;
         _uiManager.ScoreUiText.UpdateScoreUi(_score);
-    }
-
-    public void PauseGame()
-    {
-        Time.timeScale = 0;
-    }
-
-    public void UnpauseGame()
-    {
-        Time.timeScale = 1;
     }
 
     public static GameManager GetInstance()
