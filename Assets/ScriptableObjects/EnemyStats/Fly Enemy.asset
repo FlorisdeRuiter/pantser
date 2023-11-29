@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfd56fb784c1c614f993d8c631771a13, type: 3}
   m_Name: Fly Enemy
   m_EditorClassIdentifier: 
-  MaxHealth: 10
+  MaxHealth: 2
   Damage: 5
   ChaseSpeed: 2
   Value: 1

@@ -9,7 +9,7 @@ public class Ability : MonoBehaviour
 
     public string Name;
 
-    private void Start()
+    public virtual void Start()
     {
         //Puts all children under parent in a list
         foreach (Transform child in transform)

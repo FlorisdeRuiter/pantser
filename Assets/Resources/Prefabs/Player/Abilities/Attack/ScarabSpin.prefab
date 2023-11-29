@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2242636075684045981}
   - component: {fileID: 2242636075684045982}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WeaponSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 4861706444531354133}
   - component: {fileID: 2242636073710500467}
   - component: {fileID: 2242636073710500466}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ScarabSpin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,6 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 316d740dbf0a36043b695f6059b37f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _childrenList: []
+  Name: 
   BaseDamage: 20
   _baseAttackInterval: 2
   _attackEvent:
@@ -169,7 +171,7 @@ GameObject:
   - component: {fileID: 4861706444912052550}
   - component: {fileID: 4861706444912052545}
   - component: {fileID: 2242636074420499550}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WeaponCollider
   m_TagString: Weapon
   m_Icon: {fileID: 0}

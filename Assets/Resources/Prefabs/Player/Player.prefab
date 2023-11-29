@@ -167,8 +167,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _walkSpeed: 10
-  _horInput: 0
-  _verInput: 0
+  HorInput: 0
+  VerInput: 0
 --- !u!114 &8506161263521155953
 MonoBehaviour:
   m_ObjectHideFlags: 0
