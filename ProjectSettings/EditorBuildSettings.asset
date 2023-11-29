@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Resources/Scenes/CreditsMenu.unity
     guid: 99ccebef89f8d1c488a716293f7ec97f
+  - enabled: 1
+    path: Assets/Resources/Scenes/GameLossScreen.unity
+    guid: 950ffe6d9d5745c429ede1eff4508f52
+  - enabled: 1
+    path: Assets/Resources/Scenes/GameWinScene.unity
+    guid: dcda510ed3f46a84fa61f54bb532925a
   m_configObjects: {}

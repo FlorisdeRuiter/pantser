@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
@@ -9,13 +7,7 @@ public class GameManager : MonoBehaviour
     private UiManager _uiManager;
 
     private static GameManager _instance;
-
-    private float _score;
-    private float _gameTime;
-
-    [SerializeField] private SceneLoadData _pauseMenu;
-
-
+    [SerializeField] private InputAction _pauseAction;
 
     private void Start()
     {
@@ -25,18 +17,64 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         IncreaseTimer();
+
+        if (Keyboard.current.escapeKey.wasPressedThisFrame || Gamepad.current.startButton.wasPressedThisFrame)
+        {
+            TogglePause();
+        }
     }
 
-    public void IncreaseTimer()
-    {
-        _gameTime += Time.deltaTime;
-        _uiManager.TimeUiText.UpdateTimeUi(_gameTime);
-    }
-
+    private float _score = 0;
     public void IncreaseScore(float value)
     {
         _score += value;
         _uiManager.ScoreUiText.UpdateScoreUi(_score);
+    }
+
+    [SerializeField] private float _gameTime;
+    [SerializeField] private float _totalGameTime;
+    public void IncreaseTimer()
+    {
+        _gameTime += Time.deltaTime;
+        _uiManager.TimeUiText.UpdateTimeUi(_gameTime);
+
+        if (_gameTime >= _totalGameTime && !_gameHasEnded)
+        {
+            EndGame(true);
+        }
+    }
+
+    [SerializeField] private UnityEvent _gameWinEvent;
+    [SerializeField] private UnityEvent _gameLossEvent;
+    [SerializeField] private bool _gameHasEnded;
+    public void EndGame(bool hasWon)
+    {
+        if (hasWon)
+            _gameWinEvent?.Invoke();
+        else
+            _gameLossEvent?.Invoke();
+
+        _gameHasEnded = true;
+        Time.timeScale = 0;
+    }
+
+    [SerializeField] private UnityEvent _pauseEvent;
+    [SerializeField] private UnityEvent _unpauseEvent;
+    [SerializeField] private bool _gameIsPaused;
+    public void TogglePause()
+    {
+        if (_gameIsPaused)
+        {
+            Time.timeScale = 1;
+            _unpauseEvent?.Invoke();
+        }
+        else
+        {
+            Time.timeScale = 0;
+            _pauseEvent?.Invoke();
+        }
+
+        _gameIsPaused = !_gameIsPaused;
     }
 
     public static GameManager GetInstance()
