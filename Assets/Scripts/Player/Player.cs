@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(CircleCollider2D))]
 public class Player : MonoBehaviour, IDamageable
 {
     [Header("Health")]
