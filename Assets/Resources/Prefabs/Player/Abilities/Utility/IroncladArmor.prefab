@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 528575773562537124}
   - component: {fileID: 528575773562537127}
   - component: {fileID: 528575773562537126}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: UtilityCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,7 +67,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 4
+  m_Radius: 0.06
 --- !u!114 &528575773562537126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5d8f8eb2b3776e4cab313bade13fa51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHitsToBreak: 0
+  MaxHitsToBreak: 1
   HitsToBreak: 0
 --- !u!1 &528575774696713572
 GameObject:
@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 528575774696713575}
   - component: {fileID: 528575774696713574}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: UtilitySprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,12 +155,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ff821d6d07b59424fb9e3403e8c91c33, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  m_Color: {r: 0.3207547, g: 0.27990386, b: 0.27990386, a: 0.3019608}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 8, y: 8}
+  m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 528575774967866911}
   - component: {fileID: 528575774605760268}
   - component: {fileID: 528575774605760271}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: IroncladArmor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,7 +194,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 25, y: 25, z: 25}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 528575773562537124}
@@ -214,6 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childrenList: []
+  Name: IroncladArmor
   _upTime: 0
   _downTime: 15
   _disableType: 1

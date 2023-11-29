@@ -6,7 +6,6 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     private static EnemySpawner _instance;
-    private Player player;
 
     [Header("Enemy Types")]
     public List<ObjectPool> EnemyPoolsList;                              //List of all enemyPools in game
@@ -22,13 +21,19 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField, Range(0, 10)] private float _spawnRateInterval;     //Interval between spawn rate increases
     [Tooltip("Amount spawnRateInterval deacreases by")]
     [SerializeField, Range(0f, 1f)] private float _spawnRateIncrease;    //Amount spawnRateInterval deacreases by
+    [Tooltip("Current value of enemies active in scene")]
+    [SerializeField] public int CurrentEnemyValue;
+    [Tooltip("Amount of enemies allowed the be active at a time")]
+    [SerializeField, Range(0, 150)] private int _maxAllowedEnemyValue;
 
     [Header("Enemy Spawn Offset")]
     [SerializeField, Range(0f, 1f)] private float _offsetX, _offsetY;
 
+    [SerializeField] private PlayerMovement _movement;
+
     private void Start()
     {
-        player = Player.GetInstance();
+        _movement = FindObjectOfType<PlayerMovement>();
         StartCoroutine(SpawnEnemy(GetSpawnPosition()));
         StartCoroutine(IncreaseSpawnRate(_spawnRateInterval, _spawnRateIncrease));
         StartCoroutine(AddEnemyTypeCor());
@@ -45,15 +50,18 @@ public class EnemySpawner : MonoBehaviour
     {
         WaitForSeconds wait = new WaitForSeconds(_spawnInterval);
 
+        if (CurrentEnemyValue < _maxAllowedEnemyValue)
+        {
+            // Selects a random enemy type to spawn
+            ObjectPool currentPool = _currentEnemiesInPoolsList[Random.Range(0, _currentEnemiesInPoolsList.Count)];
+
+            // Spawns enemy and sets its position
+            GameObject e = currentPool.GetPooledObject(transform.position, transform.rotation, currentPool.gameObject.transform) as GameObject;
+            e.transform.position = spawnPos;
+            e.transform.rotation = Quaternion.identity;
+        }
+
         yield return wait;
-
-        // Selects a random enemy type to spawn
-        ObjectPool currentPool = _currentEnemiesInPoolsList[Random.Range(0, _currentEnemiesInPoolsList.Count)];
-
-        // Spawns enemy and sets its position
-        GameObject e = currentPool.GetPooledObject(transform.position, transform.rotation, currentPool.gameObject.transform) as GameObject;
-        e.transform.position = spawnPos;
-        e.transform.rotation = Quaternion.identity;
 
         // Restarts the spawn cycle
         StartCoroutine(SpawnEnemy(GetSpawnPosition()));

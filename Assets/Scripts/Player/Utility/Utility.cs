@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Utility : Ability, IAbility
 {
@@ -29,6 +30,19 @@ public class Utility : Ability, IAbility
     private Animator anim;
 
     private Shield shield;
+
+    private Player _player;
+
+    public override void Start()
+    {
+        base.Start();
+        _player = Player.GetInstance();
+    }
+
+    private void Update()
+    {
+        transform.position = _player.transform.position;
+    }
 
     #region Give Object Disable Type and Start Timer
     private void OnEnable()

@@ -9,4 +9,6 @@ public class EnemyScriptableData : ScriptableObject
     public int Damage;
 
     public float ChaseSpeed;
+
+    public int Value;
 }

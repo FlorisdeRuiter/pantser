@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
-    public List<ObjectPool> EnemyPoolList;
-    private EnemySpawner _spawner;
     private UiManager _uiManager;
 
     private static GameManager _instance;
@@ -14,10 +13,12 @@ public class GameManager : MonoBehaviour
     private float _score;
     private float _gameTime;
 
+    [SerializeField] private SceneLoadData _pauseMenu;
+
+
+
     private void Start()
     {
-        _spawner = EnemySpawner.GetInstance();
-        EnemyPoolList = _spawner.EnemyPoolsList;
         _uiManager = UiManager.GetInstance();
     }
 
