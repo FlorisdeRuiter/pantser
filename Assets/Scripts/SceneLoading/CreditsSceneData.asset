@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 321a17126f4f0b0418beec130082e380, type: 3}
-  m_Name: CreditsMenuData
+  m_Name: CreditsSceneData
   m_EditorClassIdentifier: 
   SceneReference:
     Scene: {fileID: 102900000, guid: 99ccebef89f8d1c488a716293f7ec97f, type: 3}
