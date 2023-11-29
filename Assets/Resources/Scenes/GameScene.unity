@@ -4683,8 +4683,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PooledObject: {fileID: 7238915641427217762, guid: 8aabc11d178ccbd4092791d64de82f4b, type: 3}
-  PoolSize: 25
-  _autoExpand: 1
+  PoolSize: 15
+  _autoExpand: 0
   _expansionSize: 1
 --- !u!1 &680246707
 GameObject:
@@ -6333,8 +6333,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PooledObject: {fileID: 7238915641427217762, guid: cd4fe3e1c6d5af04ea209f586f2a95ef, type: 3}
-  PoolSize: 5
-  _autoExpand: 1
+  PoolSize: 2
+  _autoExpand: 0
   _expansionSize: 1
 --- !u!1001 &1057962544
 PrefabInstance:
@@ -7160,8 +7160,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PooledObject: {fileID: 7238915641427217762, guid: f79d3af8dd5c6834187ea3f2b72c4288, type: 3}
-  PoolSize: 50
-  _autoExpand: 1
+  PoolSize: 25
+  _autoExpand: 0
   _expansionSize: 1
 --- !u!4 &1237553304
 Transform:
@@ -8938,8 +8938,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PooledObject: {fileID: 7238915641427217762, guid: 550952ab3686fc045b91b324c5f43af9, type: 3}
-  PoolSize: 10
-  _autoExpand: 1
+  PoolSize: 5
+  _autoExpand: 0
   _expansionSize: 1
 --- !u!1001 &1536059277
 PrefabInstance:
@@ -11299,8 +11299,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PooledObject: {fileID: 7238915641427217762, guid: 19a1f3816bd33844a992dad7401c1d9f, type: 3}
-  PoolSize: 50
-  _autoExpand: 1
+  PoolSize: 20
+  _autoExpand: 0
   _expansionSize: 1
 --- !u!114 &1812935775
 MonoBehaviour:
@@ -12826,14 +12826,12 @@ MonoBehaviour:
   _currentEnemiesInPoolsList:
   - {fileID: 1237553303}
   _addEnemyPoolInterval: 5
-  _spawnInterval: 0.8
+  _spawnInterval: 0.1
   _spawnRateInterval: 2.5
   _spawnRateIncrease: 1
   CurrentEnemyValue: 0
   _maxAllowedEnemyValue: 100
-  _offsetX: 0.15
-  _offsetY: 0.25
-  _movement: {fileID: 0}
+  _spawnArea: {x: 20, y: 15}
 --- !u!4 &2088756803
 Transform:
   m_ObjectHideFlags: 0
@@ -12957,8 +12955,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PooledObject: {fileID: 7238915641427217762, guid: ca8759144085cc345abe858362c98265, type: 3}
-  PoolSize: 25
-  _autoExpand: 1
+  PoolSize: 15
+  _autoExpand: 0
   _expansionSize: 1
 --- !u!114 &2092085409
 MonoBehaviour:
