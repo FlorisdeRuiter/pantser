@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 321a17126f4f0b0418beec130082e380, type: 3}
-  m_Name: PauseMenuScene
+  m_Name: LoseSceneData
   m_EditorClassIdentifier: 
   SceneReference:
-    Scene: {fileID: 102900000, guid: 187690fb73b3f3647bd5281424b57d3e, type: 3}
-    SceneName: PauseScene
-    sceneIndex: 2
+    Scene: {fileID: 102900000, guid: 950ffe6d9d5745c429ede1eff4508f52, type: 3}
+    SceneName: GameLossScreen
+    sceneIndex: 4
     sceneEnabled: 1
   isAdditive: 1

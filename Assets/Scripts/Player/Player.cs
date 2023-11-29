@@ -34,6 +34,11 @@ public class Player : MonoBehaviour, IDamageable
         _health -= damage;
         DamageEvent?.Invoke();
         _uiManager.HealthUiBar.UpdateHealthBar(_health, _maxHealth);
+
+        if (_health <= 0)
+        {
+            GameManager.GetInstance().EndGame(false);
+        }
     }
 
     #region Returns Tag
