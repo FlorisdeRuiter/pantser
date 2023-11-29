@@ -27,14 +27,13 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField, Range(0, 150)] private int _maxAllowedEnemyValue;
 
     [Header("Enemy Spawn Offset")]
-    [SerializeField, Range(0f, 1f)] private float _offsetX, _offsetY;
+    [SerializeField] private Vector2 _spawnArea;
 
-    [SerializeField] private PlayerMovement _movement;
+    public event System.EventHandler _enemyValueChanged;
 
     private void Start()
     {
-        _movement = FindObjectOfType<PlayerMovement>();
-        StartCoroutine(SpawnEnemy(GetSpawnPosition()));
+        StartCoroutine(SpawnEnemy(GenerateRandomPosition()));
         StartCoroutine(IncreaseSpawnRate(_spawnRateInterval, _spawnRateIncrease));
         StartCoroutine(AddEnemyTypeCor());
     }
@@ -46,17 +45,18 @@ public class EnemySpawner : MonoBehaviour
     /// Places enemy on spawnPos.
     /// </summary>
     /// <param name="spawnPos">Position the enemy will spawn in</param>
-    private IEnumerator SpawnEnemy(Vector2 spawnPos)
+    private IEnumerator SpawnEnemy(Vector3 spawnPos)
     {
         WaitForSeconds wait = new WaitForSeconds(_spawnInterval);
 
         if (CurrentEnemyValue < _maxAllowedEnemyValue)
         {
             // Selects a random enemy type to spawn
-            ObjectPool currentPool = _currentEnemiesInPoolsList[Random.Range(0, _currentEnemiesInPoolsList.Count)];
+            ObjectPool randomPool = _currentEnemiesInPoolsList[Random.Range(0, _currentEnemiesInPoolsList.Count)];
 
             // Spawns enemy and sets its position
-            GameObject e = currentPool.GetPooledObject(transform.position, transform.rotation, currentPool.gameObject.transform) as GameObject;
+            GameObject e = randomPool.GetPooledObject(transform.position, transform.rotation, randomPool.gameObject.transform) as GameObject;
+
             e.transform.position = spawnPos;
             e.transform.rotation = Quaternion.identity;
         }
@@ -64,43 +64,31 @@ public class EnemySpawner : MonoBehaviour
         yield return wait;
 
         // Restarts the spawn cycle
-        StartCoroutine(SpawnEnemy(GetSpawnPosition()));
+        StartCoroutine(SpawnEnemy(GenerateRandomPosition()));
     }
 
     /// <summary>
     /// Returns a random position for an enemy to spawn.
     /// </summary>
-    private Vector2 GetSpawnPosition()
+    private Vector3 GenerateRandomPosition()
     {
-        Camera cam = Camera.main;
-        float posY = Random.Range(0f, 1f);
-        float posX = Random.Range(0f, 1f);
+        Vector3 position = new Vector3();
 
-        #region Offset
-        //Checks what offset is needed.
-        //Adds offset to the spawn position
-        if (Mathf.Abs(posX - 0.5f) > Mathf.Abs(posY - 0.5f))
+        float f = Random.value > 0.5f ? -1f : 1f;
+        if (Random.value > 0.5f)
         {
-            posX = Mathf.Round(posX);
-
-            if (posX == 0)
-                posX -= _offsetX;
-            else
-                posX += _offsetX;
+            position.x = Random.Range(-_spawnArea.x, _spawnArea.x);
+            position.y = _spawnArea.y * f;
         }
         else
         {
-            posY = Mathf.Round(posY);
-            if (posY == 0)
-                posY -= _offsetY;
-            else
-                posY += _offsetY;
+            position.y = Random.Range(-_spawnArea.y, _spawnArea.y);
+            position.x = _spawnArea.x * f;
         }
-        #endregion
 
-        Vector2 spawnPos = cam.ViewportToWorldPoint(new Vector3(posX, posY));
+        position.z = 0;
 
-        return spawnPos;
+        return position;
     }
     #endregion
 
