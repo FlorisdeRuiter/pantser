@@ -134,3 +134,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   expValue: 1
+  _maxSpeed: 0
+  _timeTillMaxSpeed: 1.5
+  IsMoving: 0

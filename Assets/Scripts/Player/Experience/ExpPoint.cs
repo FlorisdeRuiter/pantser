@@ -5,14 +5,15 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class ExpPoint : PoolItem, IPickupable
 {
-    private Player player;
+    [SerializeField] private int expValue;
+    [SerializeField] private float _timeTillPlayerReached;
+
     private ExperienceManager experienceManager;
 
-    [SerializeField] private int expValue;
+    public bool IsMoving = false;
 
     private void Start()
     {
-        player = Player.GetInstance();
         experienceManager = ExperienceManager.GetInstance();
     }
 
@@ -20,5 +21,37 @@ public class ExpPoint : PoolItem, IPickupable
     {
         experienceManager.OnGainExp(expValue);
         ReturnToPool();
+    }
+
+    public void StartSmoothMoveToObject(GameObject targetObject)
+    {
+        if (targetObject.activeInHierarchy)
+        {
+            StartCoroutine(SmoothMoveToObject(targetObject));
+        }
+    }
+
+    private IEnumerator SmoothMoveToObject(GameObject targetObject)
+    {
+        float timeElapsed = 0;
+        Vector3 startPosition = transform.position;
+        while (timeElapsed <= _timeTillPlayerReached)
+        {
+            transform.position = Vector3.Lerp(startPosition, targetObject.transform.position, SmoothTime(timeElapsed / _timeTillPlayerReached));
+            Debug.Log(timeElapsed / _timeTillPlayerReached);
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+        transform.position = targetObject.transform.position;
+    }
+
+    private float SmoothTime(float t)
+    {
+        return t * t * (3f - 2f * t);
+    }
+
+    private void OnEnable()
+    {
+        IsMoving = false;
     }
 }
