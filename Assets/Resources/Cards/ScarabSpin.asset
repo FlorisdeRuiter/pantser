@@ -10,35 +10,35 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47c3bce63ba20594cad6872ef39fd272, type: 3}
-  m_Name: BombardierAcidSpray2
+  m_Name: ScarabSpin
   m_EditorClassIdentifier: 
-  CardName: Bombardier Acid Spray
-  CardInfo: Projectile
+  CardName: Scarab Spin
+  CardInfo: Spins sword
   CardStage: 0
   BaseCardStage: 0
-  CardSprite: {fileID: 2800000, guid: e422ea04d31b363458c091426a243157, type: 3}
+  CardSprite: {fileID: 2800000, guid: 65e09921abed5c9479f2d9a4f1486f16, type: 3}
   ActivateOnStart: 0
-  AbilityName: BombardierAcidSpray
-  AbilityType: 1
+  AbilityName: ScarabSpin
+  AbilityType: 0
   Modifications:
-  - Damage: 3
-    Interval: 1.5
-    Downtime: 0
-    Uptime: 0
-  - Damage: 5
-    Interval: 0.8
-    Downtime: 0
-    Uptime: 0
-  - Damage: 9
-    Interval: 0.7
-    Downtime: 0
-    Uptime: 0
-  - Damage: 12
-    Interval: 0.6
+  - Damage: 10
+    Interval: 1
     Downtime: 0
     Uptime: 0
   - Damage: 15
-    Interval: 0.5
+    Interval: 1
     Downtime: 0
     Uptime: 0
-  AbilityObject: {fileID: 4486636073472476565, guid: 0451812dbcd89364c9dfeebb5291068e, type: 3}
+  - Damage: 15
+    Interval: 1
+    Downtime: 0
+    Uptime: 0
+  - Damage: 15
+    Interval: 1
+    Downtime: 0
+    Uptime: 0
+  - Damage: 15
+    Interval: 1
+    Downtime: 0
+    Uptime: 0
+  AbilityObject: {fileID: 4861706444531354122, guid: 0229378741586764c8d79e87e3df224e, type: 3}

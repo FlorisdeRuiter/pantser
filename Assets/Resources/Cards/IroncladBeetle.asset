@@ -17,7 +17,7 @@ MonoBehaviour:
   CardStage: 0
   BaseCardStage: 0
   CardSprite: {fileID: 2800000, guid: 47d1b57dce792a44ab1233ed7cf64884, type: 3}
-  ActivateOnStart: 1
+  ActivateOnStart: 0
   AbilityName: IroncladArmor
   AbilityType: 2
   Modifications:

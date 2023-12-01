@@ -72,7 +72,7 @@ public class Projectile : PoolItem
     /// <summary>
     /// Returns projectile to pool.
     /// </summary>
-    public void Die()
+    public virtual void Die()
     {
         ReturnToPool();
     }

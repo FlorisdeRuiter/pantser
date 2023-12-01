@@ -12826,7 +12826,7 @@ MonoBehaviour:
   _currentEnemiesInPoolsList:
   - {fileID: 1237553303}
   _addEnemyPoolInterval: 5
-  _spawnInterval: 0.1
+  _spawnInterval: 1
   _spawnRateInterval: 2.5
   _spawnRateIncrease: 1
   CurrentEnemyValue: 0
