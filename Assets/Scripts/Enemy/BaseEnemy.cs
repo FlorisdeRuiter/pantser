@@ -9,8 +9,8 @@ public class BaseEnemy : PoolItem, IEnemy, IDamageable
     public EnemyScriptableData StatData;
 
     [Header("Health")]
-    [SerializeField] private float _currentHealth;
     [SerializeField] private float _maxHealth;
+    public float CurrentHealth { get; private set; }
 
     [Header("Damage")]
     [SerializeField] private float _damage;
@@ -29,14 +29,14 @@ public class BaseEnemy : PoolItem, IEnemy, IDamageable
     {
         SetEnemyStats();
         _player = Player.GetInstance();
-        _currentHealth = _maxHealth;
+        CurrentHealth = _maxHealth;
         EnemySpawner.GetInstance().CurrentEnemyValue += StatData.Value;
     }
 
     private void Update()
     {
         MoveTowardsTarget();
-        if (_currentHealth <= 0)
+        if (CurrentHealth <= 0)
         {
             Die();
         }
@@ -75,7 +75,7 @@ public class BaseEnemy : PoolItem, IEnemy, IDamageable
     /// <param name="damage">Value taken from the current health</param>
     public void DoDamage(float damage)
     {
-        _currentHealth -= damage;
+        CurrentHealth -= damage;
     }
 
     public Transform GetTransform()

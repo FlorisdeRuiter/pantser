@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(BoxCollider2D))]
+[RequireComponent(typeof(Collider2D))]
 public class Damage : MonoBehaviour
 {
     public float DamageAmount;
 
-    private Player _player;
+    protected Player _player;
 
     [Header("Event")]
     [SerializeField] protected UnityEvent _damageEvent;

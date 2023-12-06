@@ -1,13 +1,11 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class AbilityManager : MonoBehaviour
 {
     private static AbilityManager _instance;
     [SerializeField] private List<Ability> _abilities;
-    
+
     public void AddNewAbility(AbilityCardDetails card)
     {
         // Adds the ability object to the parent object

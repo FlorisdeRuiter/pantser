@@ -6,9 +6,16 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Animator))]
 public class MeleeAttack : Ability, IAbility
 {
+    private enum EIntervalType
+    {
+        Interval,
+        ConditionalInterval
+    }
+
     [Header("Attack Configurations")]
     public float BaseDamage;
     [SerializeField] private float _baseAttackInterval;
+    private float _timeSinceAttack;
 
     [Header("Event")]
     [SerializeField] private UnityEvent _attackEvent;
@@ -17,6 +24,9 @@ public class MeleeAttack : Ability, IAbility
     private Animator _anim;
     private readonly string _attackTrigger = "attack";
 
+    private EIntervalType _intervalType;
+
+    [HideInInspector]
     public Damage Damage;
 
     private Player _player;
@@ -27,16 +37,16 @@ public class MeleeAttack : Ability, IAbility
         _anim = GetComponent<Animator>();
         Damage = GetComponentInChildren<Damage>();
         Damage.DamageAmount = BaseDamage;
+        _timeSinceAttack = _baseAttackInterval;
     }
 
     private void Update()
     {
-        transform.position = _player.transform.position;
-    }
+        _timeSinceAttack -= Time.deltaTime;
+        if (_timeSinceAttack > 0)
+            return;
 
-    private void OnEnable()
-    {
-        StartCoroutine(Attack());
+        AttackOnInterval();
     }
 
     #region Attack
@@ -45,25 +55,20 @@ public class MeleeAttack : Ability, IAbility
         _attackEvent?.Invoke();
     }
 
-    private IEnumerator Attack()
+    private void AttackOnInterval()
     {
-        // Sets wait to the attack interval
-        WaitForSeconds wait = new WaitForSeconds(_baseAttackInterval * _player.ConstantIntervalModifier);
-
-        yield return wait;
-
         // Plays attack animation
         _anim.SetTrigger(_attackTrigger);
         OnAttack();
 
-        StartCoroutine(Attack());
+        _timeSinceAttack = _baseAttackInterval;
     }
     #endregion
 
     #region Collider toggle
     private void ToggleCollider()
     {
-        BoxCollider2D collider = GetComponentInChildren<BoxCollider2D>();
+        Collider2D collider = GetComponentInChildren<Collider2D>();
         collider.enabled = !collider.enabled;
     }
     #endregion

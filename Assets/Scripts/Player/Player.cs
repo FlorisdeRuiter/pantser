@@ -7,7 +7,7 @@ public class Player : MonoBehaviour, IDamageable
 {
     [Header("Health")]
     [SerializeField] private float _maxHealth;
-    [SerializeField] private float _health;
+    public float Health { get; set; }
 
     [Header("Ability")]
     public float ConstantDamageModifier = 0;
@@ -23,18 +23,18 @@ public class Player : MonoBehaviour, IDamageable
 
     private void Start()
     {
-        _health = _maxHealth;
+        Health = _maxHealth;
         _uiManager = UiManager.GetInstance();
-        _uiManager.HealthUiBar.UpdateHealthBar(_health, _maxHealth);
+        _uiManager.HealthUiBar.UpdateHealthBar(Health, _maxHealth);
     }
 
     public void DoDamage(float damage)
     {
-        _health -= damage;
+        Health -= damage;
         DamageEvent?.Invoke();
-        _uiManager.HealthUiBar.UpdateHealthBar(_health, _maxHealth);
+        _uiManager.HealthUiBar.UpdateHealthBar(Health, _maxHealth);
 
-        if (_health <= 0)
+        if (Health <= 0)
         {
             GameManager.GetInstance().EndGame(false);
         }
