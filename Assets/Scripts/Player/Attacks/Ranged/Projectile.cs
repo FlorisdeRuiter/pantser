@@ -65,6 +65,7 @@ public class Projectile : PoolItem
         IEnemy enemy;
         if (collision.TryGetComponent<IEnemy>(out enemy) && BreakType == ProjectileBreakType.hit)
         {
+            Debug.Log("???");
             Die();
         }
     }

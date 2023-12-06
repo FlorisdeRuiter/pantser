@@ -61,7 +61,7 @@ public class BaseEnemy : PoolItem, IEnemy, IDamageable
     private void OnTriggerEnter2D(Collider2D collision)
     {
         IDamageable damageable;
-        if (collision.CompareTag(_player.tag) && collision.gameObject.TryGetComponent<IDamageable>(out damageable))
+        if (collision.CompareTag(_player.gameObject.tag) && collision.gameObject.TryGetComponent<IDamageable>(out damageable))
         {
             damageable.DoDamage(_damage);
         }

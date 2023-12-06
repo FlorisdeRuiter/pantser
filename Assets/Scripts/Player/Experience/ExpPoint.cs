@@ -38,7 +38,6 @@ public class ExpPoint : PoolItem, IPickupable
         while (timeElapsed <= _timeTillPlayerReached)
         {
             transform.position = Vector3.Lerp(startPosition, targetObject.transform.position, SmoothTime(timeElapsed / _timeTillPlayerReached));
-            Debug.Log(timeElapsed / _timeTillPlayerReached);
             timeElapsed += Time.deltaTime;
             yield return null;
         }

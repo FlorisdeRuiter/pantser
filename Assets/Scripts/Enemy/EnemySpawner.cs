@@ -29,8 +29,6 @@ public class EnemySpawner : MonoBehaviour
     [Header("Enemy Spawn Offset")]
     [SerializeField] private Vector2 _spawnArea;
 
-    public event System.EventHandler _enemyValueChanged;
-
     private void Start()
     {
         StartCoroutine(SpawnEnemy(GenerateRandomPosition()));
@@ -49,17 +47,14 @@ public class EnemySpawner : MonoBehaviour
     {
         WaitForSeconds wait = new WaitForSeconds(_spawnInterval);
 
-        if (CurrentEnemyValue < _maxAllowedEnemyValue)
-        {
-            // Selects a random enemy type to spawn
-            ObjectPool randomPool = _currentEnemiesInPoolsList[Random.Range(0, _currentEnemiesInPoolsList.Count)];
+        // Selects a random enemy type to spawn
+        ObjectPool randomPool = _currentEnemiesInPoolsList[Random.Range(0, _currentEnemiesInPoolsList.Count)];
 
-            // Spawns enemy and sets its position
-            GameObject e = randomPool.GetPooledObject(transform.position, transform.rotation, randomPool.gameObject.transform) as GameObject;
+        // Spawns enemy and sets its position
+        GameObject e = randomPool.GetPooledObject(transform.position, transform.rotation, randomPool.gameObject.transform) as GameObject;
 
-            e.transform.position = spawnPos;
-            e.transform.rotation = Quaternion.identity;
-        }
+        e.transform.position = spawnPos;
+        e.transform.rotation = Quaternion.identity;
 
         yield return wait;
 

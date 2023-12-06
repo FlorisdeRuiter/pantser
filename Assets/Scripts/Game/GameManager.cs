@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour
     private UiManager _uiManager;
 
     private static GameManager _instance;
-    [SerializeField] private InputAction _pauseAction;
 
     private void Start()
     {

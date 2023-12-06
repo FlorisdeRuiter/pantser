@@ -26,7 +26,7 @@ public class RangedAttack : Ability, IAbility
     [SerializeField] private UnityEvent _attackEvent;
 
     [Header("Object Pool")]
-    private ObjectPool _projectilePool;
+    [SerializeField] private ObjectPool _projectilePool;
     private List<Projectile> _projectileList;
 
     [Header("Animation")]

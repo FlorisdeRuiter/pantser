@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 767bedc4492b42c4e8c3d13bb58f59a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PooledObject: {fileID: 1879494531106713356, guid: 3d8623a0b158a5644acb0ede5d48979b, type: 3}
+  PooledObject: {fileID: 1879494531106713356, guid: 3114befc3feaa90408922a102464d601, type: 3}
   PoolSize: 5
   _autoExpand: 1
   _expansionSize: 2
@@ -94,6 +94,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8265711d86005f54ca17efc30d6c7daf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _childrenList: []
+  Name: 
   _baseDamage: 10
   _baseAttackInterval: 2
   _targetType: 0
