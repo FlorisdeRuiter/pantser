@@ -18,19 +18,19 @@ MonoBehaviour:
   BaseCardStage: 0
   CardSprite: {fileID: 2800000, guid: ae04228b61458c943b706436f2a2f8f0, type: 3}
   ActivateOnStart: 0
-  AbilityName: 
+  AbilityName: DeathKiss
   AbilityType: 0
   Modifications:
   - Damage: 5
-    Interval: 1
+    Interval: 5
     Downtime: 0
     Uptime: 0
   - Damage: 5
-    Interval: 1
+    Interval: 5
     Downtime: 0
     Uptime: 0
   - Damage: 5
-    Interval: 1
+    Interval: 5
     Downtime: 0
     Uptime: 0
-  AbilityObject: {fileID: 0}
+  AbilityObject: {fileID: 7038618851649009245, guid: db41795f9bef9df499b02ff260e3ab01, type: 3}

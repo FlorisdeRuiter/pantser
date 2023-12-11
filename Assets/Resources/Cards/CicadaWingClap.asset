@@ -15,10 +15,10 @@ MonoBehaviour:
   CardName: Cicada Wing Clap
   CardInfo: 'Generate damaging shockwaves by clapping your wings, hitting enemies
     around your position.  '
-  CardStage: 1
+  CardStage: 0
   BaseCardStage: 0
   CardSprite: {fileID: 2800000, guid: 2ec01c83fb85fbb4e87ed80f4249ebb3, type: 3}
-  ActivateOnStart: 1
+  ActivateOnStart: 0
   AbilityName: CicadaWingClap
   AbilityType: 0
   Modifications:

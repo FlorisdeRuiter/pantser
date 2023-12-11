@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4861706444531354133}
   - component: {fileID: 2242636073710500467}
-  - component: {fileID: 2242636073710500466}
+  - component: {fileID: 932592633182166808}
   m_Layer: 11
   m_Name: ScarabSpin
   m_TagString: Untagged
@@ -140,7 +140,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2242636073710500466
+--- !u!114 &932592633182166808
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,17 +149,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 4861706444531354122}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 316d740dbf0a36043b695f6059b37f25, type: 3}
+  m_Script: {fileID: 11500000, guid: 021aab1bfada114479aeab86ccf77dc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _childrenList: []
   Name: 
-  BaseDamage: 20
-  _baseAttackInterval: 2
+  BaseDamage: 0
+  _baseAttackInterval: 0
+  _timeUntilAttack: 0
   _attackEvent:
     m_PersistentCalls:
       m_Calls: []
-  Damage: {fileID: 0}
 --- !u!1 &4861706444912052551
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,7 +170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4861706444912052550}
   - component: {fileID: 4861706444912052545}
-  - component: {fileID: 2242636074420499550}
+  - component: {fileID: 1108977080117650650}
   m_Layer: 11
   m_Name: WeaponCollider
   m_TagString: Weapon
@@ -238,7 +238,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 2.4041724}
   m_EdgeRadius: 0
---- !u!114 &2242636074420499550
+--- !u!114 &1108977080117650650
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -247,10 +247,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4861706444912052551}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c912e28cc4bc2c04890d1cfbbb77dcd9, type: 3}
+  m_Script: {fileID: 11500000, guid: 816d1787cd15006478ba1728c654d27b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamageAmount: 0
   _damageEvent:
     m_PersistentCalls:
       m_Calls: []

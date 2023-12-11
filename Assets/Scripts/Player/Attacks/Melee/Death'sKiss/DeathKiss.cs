@@ -1,30 +1,32 @@
 using UnityEngine;
 
-public class DeathKiss : MeleeDamage
+public class DeathKiss : AMeleeAttack
 {
     #region Damage Enemy on Collision
     /// <summary>
     /// Checks if the target that's been hit has an IDamageable script attached.
     /// </summary>
     /// <param name="collision">The collider the attack collided with</param>
-    protected override void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
+        if (_timeUntilAttack > 0)
+            return;
+
         IDamageable damageable;
-        BaseEnemy enemy;
+        EnemyHealth enemy;
         //Checks if collided object has Damageable Interface
-        if (collision.gameObject.TryGetComponent<IDamageable>(out damageable) && !collision.CompareTag(Player.GetInstance().tag) && collision.gameObject.TryGetComponent<BaseEnemy>(out enemy))
+        if (collision.gameObject.TryGetComponent<IDamageable>(out damageable) && collision.gameObject.TryGetComponent<EnemyHealth>(out enemy))
         {
-            //Does Damage to damageable
-            damageable.DoDamage(DamageAmount * _player.ConstantDamageModifier);
+            damageable.DoDamage(BaseDamage);
             DrainHp(enemy);
 
-            _damageEvent?.Invoke();
+            Attack();
         }
     }
     #endregion
 
-    public void DrainHp(BaseEnemy enemy)
+    public void DrainHp(EnemyHealth enemy)
     {
-        _player.Health = enemy.CurrentHealth / 2;
+        GameManager.GetInstance().Player.PlayerHealth.Heal(enemy.CurrentHealth / 2);
     }
 }

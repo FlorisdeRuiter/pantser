@@ -13,7 +13,6 @@ public class Projectile : PoolItem
 
     [Header("Stats")]
     [SerializeField] private float _speed;
-    public float Damage;
 
     [Header("Life Timer")]
     [SerializeField] private float _lifeTime;

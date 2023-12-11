@@ -4,20 +4,28 @@ using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
-    private UiManager _uiManager;
+    public PlayerManager Player;
+    public UiManager UiManager;
+    public CardManager CardManager;
+    public AbilityManager AbilityManager;
+    public ExperienceManager ExperienceManager;
 
     private static GameManager _instance;
 
-    private void Start()
+    private void Awake()
     {
-        _uiManager = UiManager.GetInstance();
+        Player = FindObjectOfType<PlayerManager>();
+        UiManager = FindObjectOfType<UiManager>();
+        CardManager = FindObjectOfType<CardManager>();
+        AbilityManager = FindObjectOfType<AbilityManager>();
+        ExperienceManager = FindObjectOfType<ExperienceManager>();
     }
 
     private void Update()
     {
         IncreaseTimer();
 
-        if (Keyboard.current.escapeKey.wasPressedThisFrame || Gamepad.current.startButton.wasPressedThisFrame)
+        if (Keyboard.current.escapeKey.wasPressedThisFrame)
         {
             TogglePause();
         }
@@ -27,7 +35,7 @@ public class GameManager : MonoBehaviour
     public void IncreaseScore(float value)
     {
         _score += value;
-        _uiManager.ScoreUiText.UpdateScoreUi(_score);
+        UiManager.ScoreUiText.UpdateScoreUi(_score);
     }
 
     [SerializeField] private float _gameTime;
@@ -35,7 +43,7 @@ public class GameManager : MonoBehaviour
     public void IncreaseTimer()
     {
         _gameTime += Time.deltaTime;
-        _uiManager.TimeUiText.UpdateTimeUi(_gameTime);
+        UiManager.TimeUiText.UpdateTimeUi(_gameTime);
 
         if (_gameTime >= _totalGameTime && !_gameHasEnded)
         {

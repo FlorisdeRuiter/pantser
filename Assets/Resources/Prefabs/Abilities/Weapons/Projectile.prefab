@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3546519470436664770}
   - component: {fileID: 4086424411324588684}
   - component: {fileID: -1198630175741064006}
-  - component: {fileID: -2121139234079684087}
+  - component: {fileID: 3544748002378265172}
   - component: {fileID: 8416339841844021819}
   m_Layer: 8
   m_Name: Projectile
@@ -103,7 +103,7 @@ MonoBehaviour:
   Damage: 20
   _lifeTime: 3
   BreakType: 0
---- !u!114 &-2121139234079684087
+--- !u!114 &3544748002378265172
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1879494531106713356}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a19d958a8c41b984bb398285837483dc, type: 3}
+  m_Script: {fileID: 11500000, guid: 816d1787cd15006478ba1728c654d27b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DamageAmount: 0

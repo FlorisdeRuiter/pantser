@@ -1,14 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class BombardierAcidSpray : Projectile
+public class BombardierAcidSpray : MonoBehaviour
 {
     [SerializeField] private GameObject _areaEffect;
 
-    public override void Die()
+    public void PlaceAcidSplash()
     {
         Instantiate(_areaEffect, transform.position, Quaternion.identity);
-        base.Die();
     }
 }

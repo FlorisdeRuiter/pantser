@@ -1,6 +1,6 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class Card : MonoBehaviour
 {
@@ -14,7 +14,7 @@ public class Card : MonoBehaviour
 
     private void Awake()
     {
-        _cardManager = CardManager.GetInstance();
+        _cardManager = GameManager.GetInstance().CardManager;
     }
 
     public void SetCardDetails(CardScriptableDetails details)
@@ -22,7 +22,7 @@ public class Card : MonoBehaviour
         _cardType = details;
         _cardName.text = details.CardName;
         _cardInfo.text = details.CardInfo;
-        _cardSprite.texture = details.CardSprite;  
+        _cardSprite.texture = details.CardSprite;
     }
 
     public void OnPickCard()
@@ -34,13 +34,13 @@ public class Card : MonoBehaviour
             if (abilityCard.CardStage == 0)
             {
                 // Adds a new ability if the picked ability wasn't active yet
-                AbilityManager.GetInstance().AddNewAbility(abilityCard);
+                GameManager.GetInstance().AbilityManager.AddNewAbility(abilityCard);
             }
             else
             {
                 // Upgrades a abilities stats if it was already active and player picked it again
-                abilityObject = AbilityManager.GetInstance().GetAbilityObject(abilityCard.AbilityName);
-                abilityObject.GetComponent<IAbility>().SetConfig(abilityCard.Modifications[abilityCard.CardStage]);
+                abilityObject = GameManager.GetInstance().AbilityManager.GetAbilityObject(abilityCard.AbilityName);
+                abilityObject.GetComponent<IAbility>().SetConfig(abilityCard.Modifications[abilityCard.CardStage-1]);
             }
 
             abilityCard.CardStage += 1;

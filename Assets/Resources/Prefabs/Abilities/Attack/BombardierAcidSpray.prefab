@@ -57,8 +57,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4486636073472476564}
-  - component: {fileID: 4486636073472476561}
   - component: {fileID: 4486636073472476566}
+  - component: {fileID: 3924230626497538470}
   m_Layer: 0
   m_Name: BombardierAcidSpray
   m_TagString: Untagged
@@ -82,38 +82,6 @@ Transform:
   - {fileID: 4486636072444441466}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4486636073472476561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4486636073472476565}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8265711d86005f54ca17efc30d6c7daf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _childrenList: []
-  Name: 
-  _baseDamage: 10
-  _baseAttackInterval: 2
-  _targetType: 0
-  _attackEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4486636073472476561}
-        m_TargetAssemblyTypeName: RangedAttack, Assembly-CSharp
-        m_MethodName: ActivateProjectile
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!95 &4486636073472476566
 Animator:
   serializedVersion: 5
@@ -135,3 +103,36 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3924230626497538470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4486636073472476565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d953df4412e3b74f9483ca9bda8aaa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _childrenList: []
+  Name: 
+  _baseDamage: 0
+  _baseAttackInterval: 0
+  _timeUntilAttack: 0
+  _attackEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3924230626497538470}
+        m_TargetAssemblyTypeName: ARangedAttack, Assembly-CSharp
+        m_MethodName: ActivateProjectile
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _projectilePool: {fileID: 0}

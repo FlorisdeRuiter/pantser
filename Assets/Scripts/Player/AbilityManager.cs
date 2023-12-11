@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class AbilityManager : MonoBehaviour
 {
-    private static AbilityManager _instance;
     [SerializeField] private List<Ability> _abilities;
 
     public void AddNewAbility(AbilityCardDetails card)
@@ -12,9 +11,9 @@ public class AbilityManager : MonoBehaviour
         GameObject abilityObject = Instantiate(card.AbilityObject, transform);
         _abilities.Add(abilityObject.GetComponent<Ability>());
 
-        if (card.CardStage >= card.Modifications.Count)
+        if (card.CardStage < card.Modifications.Count)
         {
-            abilityObject.GetComponent<IAbility>().SetConfig(card.Modifications[card.CardStage]);
+            abilityObject.GetComponent<IAbility>().SetConfig(card.Modifications[card.CardStage-1]);
         }
     }
 
@@ -29,23 +28,4 @@ public class AbilityManager : MonoBehaviour
         }
         return null;
     }
-
-    #region Get Instance
-    public static AbilityManager GetInstance()
-    {
-        // Check if the instance exists
-        if (_instance != null) return _instance;
-
-        // Find a potential instance
-        _instance = FindObjectOfType<AbilityManager>();
-
-        // If it's still null, then create a new one
-        if (_instance == null)
-        {
-            _instance = new GameObject("AbilityManager").AddComponent<AbilityManager>();
-        }
-
-        return _instance;
-    }
-    #endregion
 }

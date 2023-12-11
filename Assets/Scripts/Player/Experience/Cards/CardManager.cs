@@ -9,8 +9,6 @@ public class CardManager : MonoBehaviour
     public List<Card> Cards;
     public List<CardScriptableDetails> CardDetailsList;
 
-    private static CardManager _instance;
-
     private void Start()
     {
         // Loads all the cards from the resources file into a list
@@ -31,7 +29,7 @@ public class CardManager : MonoBehaviour
 
                 if (card.ActivateOnStart)
                 {
-                    AbilityManager.GetInstance().AddNewAbility(abilityCard);
+                    GameManager.GetInstance().AbilityManager.AddNewAbility(abilityCard);
                 }
             }
         }
@@ -99,23 +97,4 @@ public class CardManager : MonoBehaviour
     {
         CardDetailsList.Remove(card);
     }
-
-    #region Get Instance
-    public static CardManager GetInstance()
-    {
-        // Check if the instance exists
-        if (_instance != null) return _instance;
-
-        // Find a potential instance
-        _instance = FindObjectOfType<CardManager>();
-
-        // If it's still null, then create a new one
-        if (_instance == null)
-        {
-            _instance = new GameObject("CardManager").AddComponent<CardManager>();
-        }
-
-        return _instance;
-    }
-    #endregion
 }

@@ -6,16 +6,17 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Collider2D))]
 public class Damage : MonoBehaviour
 {
-    public float DamageAmount;
+    protected AAttack _damage;
 
-    protected Player _player;
+    protected PlayerManager _player;
 
     [Header("Event")]
     [SerializeField] protected UnityEvent _damageEvent;
 
-    private void Awake()
+    private void Start()
     {
-        _player = Player.GetInstance();
+        _player = GameManager.GetInstance().Player;
+        _damage = GetComponentInParent<AAttack>();
     }
 
     #region Damage Enemy on Collision
@@ -27,10 +28,10 @@ public class Damage : MonoBehaviour
     {
         IDamageable damageable;
         //Checks if collided object has Damageable Interface
-        if (collision.gameObject.TryGetComponent<IDamageable>(out damageable) && !collision.CompareTag(Player.GetInstance().tag))
+        if (collision.gameObject.TryGetComponent<IDamageable>(out damageable) && !collision.CompareTag(GameManager.GetInstance().Player.tag))
         {
             //Does Damage to damageable
-            damageable.DoDamage(DamageAmount * _player.ConstantDamageModifier);
+            damageable.DoDamage(_damage.BaseDamage);
 
             _damageEvent?.Invoke();
         }
