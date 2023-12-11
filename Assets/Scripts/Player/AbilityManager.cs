@@ -13,7 +13,7 @@ public class AbilityManager : MonoBehaviour
 
         if (card.CardStage < card.Modifications.Count)
         {
-            abilityObject.GetComponent<IAbility>().SetConfig(card.Modifications[card.CardStage-1]);
+            abilityObject.GetComponent<IAbility>().SetConfig(card.Modifications[card.CardStage]);
         }
     }
 

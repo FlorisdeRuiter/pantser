@@ -11,7 +11,7 @@ public abstract class ARangedAttack : AAttack
 
     protected Transform _target;
 
-    public override void Start()
+    public virtual void Start()
     {
         _nearbyEnemiesChecker = NearbyEnemiesCheck.GetInstance();
         _projectilePool = GetComponentInChildren<ObjectPool>();

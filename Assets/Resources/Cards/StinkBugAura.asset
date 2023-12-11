@@ -10,28 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47c3bce63ba20594cad6872ef39fd272, type: 3}
-  m_Name: CicadaWingClap
+  m_Name: StinkBugAura
   m_EditorClassIdentifier: 
-  CardName: Cicada Wing Clap
-  CardInfo: 'Generate damaging shockwaves by clapping your wings, hitting enemies
-    around your position.  '
-  CardStage: 1
+  CardName: Stink Bug Aura
+  CardInfo: 'Surround yourself with a damaging stink aura, harming enemies in close
+    proximity. '
+  CardStage: 0
   BaseCardStage: 0
-  CardSprite: {fileID: 2800000, guid: 2ec01c83fb85fbb4e87ed80f4249ebb3, type: 3}
+  CardSprite: {fileID: 2800000, guid: 890bb4f7db2ae33428406478fd64218f, type: 3}
   ActivateOnStart: 0
-  AbilityName: CicadaWingClap
+  AbilityName: StinkBugAura
   AbilityType: 0
   Modifications:
-  - Damage: 3
-    Interval: 5
+  - Damage: 0.1
+    Interval: 0.2
     Downtime: 0
     Uptime: 0
-  - Damage: 5
-    Interval: 4.5
+  - Damage: 1
+    Interval: 0.5
     Downtime: 0
     Uptime: 0
-  - Damage: 7
-    Interval: 4
-    Downtime: 0
-    Uptime: 0
-  AbilityObject: {fileID: 9112712945094431466, guid: 6abbceac814e2904f87cc53734df684c, type: 3}
+  AbilityObject: {fileID: 8151831605934136791, guid: 696cb74bd1a572649ba7f09ef6f2bdc1, type: 3}

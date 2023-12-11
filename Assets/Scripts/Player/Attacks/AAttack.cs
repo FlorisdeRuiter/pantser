@@ -20,6 +20,7 @@ public abstract class AAttack : Ability, IAbility
     {
         _player = GameManager.GetInstance().Player;
         _anim = GetComponent<Animator>();
+        _timeUntilAttack = _baseAttackInterval;
     }
 
     protected abstract void Attack();

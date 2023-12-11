@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardName: Scarab Spin
   CardInfo: 'Perform a rapid 360-degree spin, damaging all nearby enemies in range. '
-  CardStage: 0
+  CardStage: 1
   BaseCardStage: 0
   CardSprite: {fileID: 2800000, guid: 65e09921abed5c9479f2d9a4f1486f16, type: 3}
   ActivateOnStart: 0

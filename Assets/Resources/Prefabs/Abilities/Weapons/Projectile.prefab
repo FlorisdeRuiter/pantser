@@ -99,8 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 342bae10fa3b3b947ae8217877561075, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 20
-  Damage: 20
+  _speed: 0
   _lifeTime: 3
   BreakType: 0
 --- !u!114 &3544748002378265172
@@ -115,7 +114,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 816d1787cd15006478ba1728c654d27b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamageAmount: 0
   _damageEvent:
     m_PersistentCalls:
       m_Calls: []

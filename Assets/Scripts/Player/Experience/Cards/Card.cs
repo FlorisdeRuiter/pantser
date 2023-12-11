@@ -40,7 +40,7 @@ public class Card : MonoBehaviour
             {
                 // Upgrades a abilities stats if it was already active and player picked it again
                 abilityObject = GameManager.GetInstance().AbilityManager.GetAbilityObject(abilityCard.AbilityName);
-                abilityObject.GetComponent<IAbility>().SetConfig(abilityCard.Modifications[abilityCard.CardStage-1]);
+                abilityObject.GetComponent<IAbility>().SetConfig(abilityCard.Modifications[abilityCard.CardStage]);
             }
 
             abilityCard.CardStage += 1;
@@ -49,10 +49,6 @@ public class Card : MonoBehaviour
             {
                 _cardManager.RemoveCardFromAvailableList(_cardType);
             }
-        }
-        else if (_cardType is StatCardDetails statCard)
-        {
-
         }
 
         Time.timeScale = 1;

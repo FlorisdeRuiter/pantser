@@ -17,8 +17,8 @@ public class DeathKiss : AMeleeAttack
         //Checks if collided object has Damageable Interface
         if (collision.gameObject.TryGetComponent<IDamageable>(out damageable) && collision.gameObject.TryGetComponent<EnemyHealth>(out enemy))
         {
-            damageable.DoDamage(BaseDamage);
             DrainHp(enemy);
+            damageable.DoDamage(BaseDamage);
 
             Attack();
         }

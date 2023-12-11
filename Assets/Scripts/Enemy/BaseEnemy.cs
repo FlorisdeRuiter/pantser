@@ -15,9 +15,11 @@ public class BaseEnemy : PoolItem, IEnemy
     [SerializeField] private float _chaseSpeed;
 
     [SerializeField] private ObjectPool _expPool;
+    public EnemyHealth Health;
 
     private void Start()
     {
+        Health = GetComponent<EnemyHealth>();
         _expPool = SetEnemyExpPool.GetInstance().ExpPool;
         _player = GameManager.GetInstance().Player;
     }

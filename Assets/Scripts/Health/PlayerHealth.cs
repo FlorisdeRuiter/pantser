@@ -1,4 +1,4 @@
-using MyBox;
+
 using UnityEngine;
 
 public class PlayerHealth : Health, IHealable
@@ -21,16 +21,17 @@ public class PlayerHealth : Health, IHealable
         {
             _currentHealth = value;
             _uiManager.HealthUiBar.UpdateHealthBar(_currentHealth, MaxHealth);
+            Debug.Log(m_currentHealth);
         }
     }
 
     public void Heal(float healAmount)
     {
-        _currentHealth += healAmount;
+        m_currentHealth += healAmount;
 
         if (_currentHealth > MaxHealth)
         {
-            _currentHealth = MaxHealth;
+            m_currentHealth = MaxHealth;
         }
     }
 

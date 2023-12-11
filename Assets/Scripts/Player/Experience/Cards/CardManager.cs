@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class CardManager : MonoBehaviour
@@ -16,13 +14,6 @@ public class CardManager : MonoBehaviour
 
         foreach (CardScriptableDetails card in CardDetailsList)
         {
-            if (card.ActivateOnStart)
-            {
-                if (card.BaseCardStage <= 0)
-                    card.CardStage = 1;
-                else
-                    card.CardStage = card.BaseCardStage;
-            }
             if (card is AbilityCardDetails abilityCard)
             {
                 abilityCard.AbilityObject.GetComponent<Ability>().Name = abilityCard.AbilityName;
@@ -31,6 +22,13 @@ public class CardManager : MonoBehaviour
                 {
                     GameManager.GetInstance().AbilityManager.AddNewAbility(abilityCard);
                 }
+            }
+            if (card.ActivateOnStart)
+            {
+                if (card.BaseCardStage <= 0)
+                    card.CardStage = 1;
+                else
+                    card.CardStage = card.BaseCardStage;
             }
         }
     }

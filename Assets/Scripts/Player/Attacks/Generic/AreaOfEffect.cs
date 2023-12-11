@@ -1,11 +1,8 @@
-using System.Collections;
 using UnityEngine;
-using UnityEngine.Events;
 
 [RequireComponent(typeof(Collider2D))]
 public class AreaOfEffect : MonoBehaviour
 {
-    [SerializeField] private UnityEvent _areaEffectEvent;
     [SerializeField] private float _despawnTime;
     [SerializeField] private float _effectTimeInterval;
     [SerializeField] private float _currentInterval;

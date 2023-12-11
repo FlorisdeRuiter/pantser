@@ -80,7 +80,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c912e28cc4bc2c04890d1cfbbb77dcd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamageAmount: 0
   _damageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -178,7 +177,7 @@ GameObject:
   m_Component:
   - component: {fileID: 530953329756966643}
   - component: {fileID: 4711591230345375933}
-  - component: {fileID: 8356792430652739687}
+  - component: {fileID: -1285062342378202063}
   m_Layer: 0
   m_Name: CicadaWingClap
   m_TagString: Untagged
@@ -224,7 +223,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8356792430652739687
+--- !u!114 &-1285062342378202063
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -233,14 +232,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 9112712945094431466}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 316d740dbf0a36043b695f6059b37f25, type: 3}
+  m_Script: {fileID: 11500000, guid: 021aab1bfada114479aeab86ccf77dc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _childrenList: []
   Name: 
-  BaseDamage: 5
-  _baseAttackInterval: 1
+  BaseDamage: 0
+  _baseAttackInterval: 0
+  _timeUntilAttack: 0
   _attackEvent:
     m_PersistentCalls:
       m_Calls: []
-  Damage: {fileID: 0}

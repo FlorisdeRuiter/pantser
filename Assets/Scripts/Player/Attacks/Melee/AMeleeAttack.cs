@@ -4,15 +4,14 @@ public class AMeleeAttack : AAttack
 {
     protected virtual void Update()
     {
-        _timeUntilAttack -= Time.deltaTime;
         transform.position = _player.transform.position;
+        _timeUntilAttack -= Time.deltaTime;
     }
 
     protected override void Attack()
     {
         _anim.SetTrigger(_attackTrigger);
 
-        _attackEvent.Invoke();
         _timeUntilAttack = _baseAttackInterval;
     }
 

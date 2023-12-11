@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,8 +5,8 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float _walkSpeed;
 
-    [SerializeField] public float HorInput;
-    [SerializeField] public float VerInput;
+    public float HorInput;
+    public float VerInput;
 
     private void Update()
     {
