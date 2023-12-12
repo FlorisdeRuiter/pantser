@@ -8,8 +8,14 @@ public class EnemyHealth : Health
         base.Start();
     }
 
+    private void OnEnable()
+    {
+        _currentHealth = MaxHealth;
+    }
+
     protected override void Death()
     {
+        OnDeath.Invoke();
         _enemy.ReturnToPool();
         _enemy.DropExp();
         GameManager.GetInstance().IncreaseScore(_enemy.StatData.Value);
