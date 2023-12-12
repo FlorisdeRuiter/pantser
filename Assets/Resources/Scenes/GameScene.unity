@@ -6256,7 +6256,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ccf7b1bcf5b08e64cad3e4924a926f20, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ae52d767749dfb84eb6237dfae3c31a4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7568,7 +7568,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c2c6a814383bbdd418b0e1f38f2cef68, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c63869da3b504e54e8c6315ea4fd9d1f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8670,7 +8670,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9441dbbcb0e4a204fbd624f2b9c42807, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e38ceab0527f6e04aa797e1d50e04a87, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10193,7 +10193,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d2f9d828c5ff00c4eb9575699aee213b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7c6d42459e1202743aa3e9e915405192, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10574,7 +10574,7 @@ Transform:
   m_GameObject: {fileID: 1764411299}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.876853, y: 2.6882415, z: -1.8655504}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12324,7 +12324,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cc6fda5058aa2764a8c565cada6943c2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fd4a0835c01c6c5488e3f325228aceef, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -13157,7 +13157,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4f87a8a488f8ee046b81532631b30001, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0877d3e87e0de6c4c8c73c58c18ff25b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -13312,6 +13312,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1008380694}
     m_Modifications:
+    - target: {fileID: -3719263588720111805, guid: a853d32ff090ec5478e7ee32587eb176, type: 3}
+      propertyPath: MaxHealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 141077714295902979, guid: a853d32ff090ec5478e7ee32587eb176, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -13762,6 +13766,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1764411300}
     m_Modifications:
+    - target: {fileID: 1033774777865207787, guid: 86a636d05c191064ab8cc537e6d04bbf, type: 3}
+      propertyPath: _requiredExpForLevelUp
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1033774777865207787, guid: 86a636d05c191064ab8cc537e6d04bbf, type: 3}
       propertyPath: _levelUpEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

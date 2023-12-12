@@ -13,7 +13,6 @@ public class Projectile : PoolItem
 
     [Header("Stats")]
     [SerializeField] private float _speed;
-    public float Damage;
 
     [Header("Life Timer")]
     [SerializeField] private float _lifeTime;
@@ -65,7 +64,6 @@ public class Projectile : PoolItem
         IEnemy enemy;
         if (collision.TryGetComponent<IEnemy>(out enemy) && BreakType == ProjectileBreakType.hit)
         {
-            Debug.Log("???");
             Die();
         }
     }

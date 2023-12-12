@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: IroncladBeetle
   m_EditorClassIdentifier: 
   CardName: Ironclad Armor
-  CardInfo: Shield
+  CardInfo: 'Activate a protective shield that absorbs one hit before requiring a
+    recharge. '
   CardStage: 0
   BaseCardStage: 0
   CardSprite: {fileID: 2800000, guid: 47d1b57dce792a44ab1233ed7cf64884, type: 3}

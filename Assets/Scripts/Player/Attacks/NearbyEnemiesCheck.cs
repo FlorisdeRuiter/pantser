@@ -1,12 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
 public class NearbyEnemiesCheck : MonoBehaviour
 {
-    private Player player;
+    private PlayerManager player;
     private static NearbyEnemiesCheck _instance;
 
     public List<Transform> nearbyEnemyList;
@@ -16,7 +14,7 @@ public class NearbyEnemiesCheck : MonoBehaviour
     private void Start()
     {
         _collider = GetComponent<BoxCollider2D>();
-        player = Player.GetInstance();
+        player = GameManager.GetInstance().Player;
         SetColliderToCameraSize();
     }
 
@@ -73,6 +71,9 @@ public class NearbyEnemiesCheck : MonoBehaviour
     /// </summary>
     public Transform GetRandomEnemy()
     {
+        if (nearbyEnemyList.Count <= 0)
+            return null;
+
         return nearbyEnemyList[Random.Range(0, nearbyEnemyList.Count)];
     }
     #endregion

@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47c3bce63ba20594cad6872ef39fd272, type: 3}
+  m_Name: CicadaWingClap
+  m_EditorClassIdentifier: 
+  CardName: Cicada Wing Clap
+  CardInfo: 'Generate damaging shockwaves by clapping your wings, hitting enemies
+    around your position.  '
+  CardStage: 1
+  BaseCardStage: 0
+  CardSprite: {fileID: 2800000, guid: 2ec01c83fb85fbb4e87ed80f4249ebb3, type: 3}
+  ActivateOnStart: 0
+  AbilityName: CicadaWingClap
+  AbilityType: 0
+  Modifications:
+  - Damage: 3
+    Interval: 5
+    Downtime: 0
+    Uptime: 0
+  - Damage: 5
+    Interval: 4.5
+    Downtime: 0
+    Uptime: 0
+  - Damage: 7
+    Interval: 4
+    Downtime: 0
+    Uptime: 0
+  AbilityObject: {fileID: 9112712945094431466, guid: 6abbceac814e2904f87cc53734df684c, type: 3}

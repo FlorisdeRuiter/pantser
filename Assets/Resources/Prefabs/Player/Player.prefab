@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 9008197755150948380}
   - component: {fileID: 2680780093475571510}
   - component: {fileID: 8086676762828899519}
+  - component: {fileID: -3719263588720111805}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -147,14 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 455903cb5fb20dd4f945f273c27a2641, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
-  _health: 0
-  ConstantDamageModifier: 1
-  ConstantIntervalModifier: 1
-  ConstantCooldownModifier: 1
-  DamageEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  PlayerHealth: {fileID: 0}
 --- !u!114 &141077714295902976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,6 +324,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &-3719263588720111805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141077714295902980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12b87edfb1f3e2049ab0d9489a01e58c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 0
+  _currentHealth: 0
 --- !u!1 &141077715302486914
 GameObject:
   m_ObjectHideFlags: 0
