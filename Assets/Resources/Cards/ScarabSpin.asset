@@ -14,31 +14,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardName: Scarab Spin
   CardInfo: 'Perform a rapid 360-degree spin, damaging all nearby enemies in range. '
-  CardStage: 1
+  CardStage: 0
   BaseCardStage: 0
   CardSprite: {fileID: 2800000, guid: 65e09921abed5c9479f2d9a4f1486f16, type: 3}
   ActivateOnStart: 0
   AbilityName: ScarabSpin
   AbilityType: 0
   Modifications:
-  - Damage: 10
-    Interval: 1
+  - Damage: 2
+    Interval: 5
     Downtime: 0
     Uptime: 0
-  - Damage: 15
-    Interval: 1
+  - Damage: 3
+    Interval: 4.5
     Downtime: 0
     Uptime: 0
-  - Damage: 15
-    Interval: 1
+  - Damage: 4.5
+    Interval: 4.5
     Downtime: 0
     Uptime: 0
-  - Damage: 15
-    Interval: 1
+  - Damage: 6
+    Interval: 3
     Downtime: 0
     Uptime: 0
-  - Damage: 15
-    Interval: 1
+  - Damage: 8
+    Interval: 2.5
     Downtime: 0
     Uptime: 0
   AbilityObject: {fileID: 4861706444531354122, guid: 0229378741586764c8d79e87e3df224e, type: 3}

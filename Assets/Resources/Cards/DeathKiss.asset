@@ -22,15 +22,15 @@ MonoBehaviour:
   AbilityType: 0
   Modifications:
   - Damage: 5
-    Interval: 1
+    Interval: 15
     Downtime: 0
     Uptime: 0
-  - Damage: 5
-    Interval: 5
+  - Damage: 10
+    Interval: 12
     Downtime: 0
     Uptime: 0
-  - Damage: 5
-    Interval: 5
+  - Damage: 20
+    Interval: 10
     Downtime: 0
     Uptime: 0
   AbilityObject: {fileID: 7038618851649009245, guid: db41795f9bef9df499b02ff260e3ab01, type: 3}

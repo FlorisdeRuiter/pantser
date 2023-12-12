@@ -17,15 +17,23 @@ MonoBehaviour:
   CardStage: 0
   BaseCardStage: 0
   CardSprite: {fileID: 2800000, guid: 4d2d740c7c8d6224fa92a9af6bc75609, type: 3}
-  ActivateOnStart: 1
+  ActivateOnStart: 0
   AbilityName: PestControl
   AbilityType: 0
   Modifications:
-  - Damage: 10
+  - Damage: 1
     Interval: 0
     Downtime: 0
     Uptime: 0
-  - Damage: 15
+  - Damage: 2.5
+    Interval: 0
+    Downtime: 0
+    Uptime: 0
+  - Damage: 4
+    Interval: 0
+    Downtime: 0
+    Uptime: 0
+  - Damage: 6
     Interval: 0
     Downtime: 0
     Uptime: 0

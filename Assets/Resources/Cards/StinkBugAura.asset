@@ -22,12 +22,20 @@ MonoBehaviour:
   AbilityName: StinkBugAura
   AbilityType: 0
   Modifications:
-  - Damage: 0.1
-    Interval: 0.2
+  - Damage: 0.3
+    Interval: 0.1
+    Downtime: 0
+    Uptime: 0
+  - Damage: 0.5
+    Interval: 0.1
+    Downtime: 0
+    Uptime: 0
+  - Damage: 0.8
+    Interval: 0.1
     Downtime: 0
     Uptime: 0
   - Damage: 1
-    Interval: 0.5
+    Interval: 0.1
     Downtime: 0
     Uptime: 0
   AbilityObject: {fileID: 8151831605934136791, guid: 696cb74bd1a572649ba7f09ef6f2bdc1, type: 3}

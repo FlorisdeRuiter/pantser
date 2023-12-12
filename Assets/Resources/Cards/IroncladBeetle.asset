@@ -36,10 +36,10 @@ MonoBehaviour:
     Uptime: 0
   - Damage: 0
     Interval: 0
-    Downtime: 8
+    Downtime: 10
     Uptime: 0
   - Damage: 0
     Interval: 0
-    Downtime: 5
+    Downtime: 8
     Uptime: 0
   AbilityObject: {fileID: 528575774967866908, guid: 7fea20e76f6168b44bb1ed20cfe98e8f, type: 3}
