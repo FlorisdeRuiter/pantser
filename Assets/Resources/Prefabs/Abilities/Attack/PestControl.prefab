@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 940933453db4a3f44b013279e8fa2aa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotationSpeed: 50
+  _rotationSpeed: 200
 --- !u!95 &8352476673244349233
 Animator:
   serializedVersion: 5
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childrenList: []
-  Name: 
+  Name: PestControl
   BaseDamage: 0
   _baseAttackInterval: 0
   _timeUntilAttack: 0
