@@ -21,8 +21,15 @@ public class PlayerHealth : Health, IHealable
         {
             _currentHealth = value;
             _uiManager.HealthUiBar.UpdateHealthBar(_currentHealth, MaxHealth);
-            Debug.Log(m_currentHealth);
         }
+    }
+
+    public override void DoDamage(float damage)
+    {
+        m_currentHealth -= damage;
+
+        if (_currentHealth <= 0)
+            Death();
     }
 
     public void Heal(float healAmount)
