@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
@@ -14,7 +13,7 @@ public class ExpPoint : PoolItem, IPickupable
 
     private void Start()
     {
-        experienceManager = ExperienceManager.GetInstance();
+        experienceManager = GameManager.GetInstance().ExperienceManager;
     }
 
     public void PickUp()

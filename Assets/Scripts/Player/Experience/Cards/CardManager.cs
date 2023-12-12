@@ -1,15 +1,11 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class CardManager : MonoBehaviour
 {
     public List<Card> Cards;
     public List<CardScriptableDetails> CardDetailsList;
-
-    private static CardManager _instance;
 
     private void Start()
     {
@@ -18,21 +14,21 @@ public class CardManager : MonoBehaviour
 
         foreach (CardScriptableDetails card in CardDetailsList)
         {
-            if (card.ActivateOnStart)
-            {
-                if (card.BaseCardStage <= 0)
-                    card.CardStage = 1;
-                else
-                    card.CardStage = card.BaseCardStage;
-            }
             if (card is AbilityCardDetails abilityCard)
             {
                 abilityCard.AbilityObject.GetComponent<Ability>().Name = abilityCard.AbilityName;
 
                 if (card.ActivateOnStart)
                 {
-                    AbilityManager.GetInstance().AddNewAbility(abilityCard);
+                    GameManager.GetInstance().AbilityManager.AddNewAbility(abilityCard);
                 }
+            }
+            if (card.ActivateOnStart)
+            {
+                if (card.BaseCardStage <= 0)
+                    card.CardStage = 1;
+                else
+                    card.CardStage = card.BaseCardStage;
             }
         }
     }
@@ -99,23 +95,4 @@ public class CardManager : MonoBehaviour
     {
         CardDetailsList.Remove(card);
     }
-
-    #region Get Instance
-    public static CardManager GetInstance()
-    {
-        // Check if the instance exists
-        if (_instance != null) return _instance;
-
-        // Find a potential instance
-        _instance = FindObjectOfType<CardManager>();
-
-        // If it's still null, then create a new one
-        if (_instance == null)
-        {
-            _instance = new GameObject("CardManager").AddComponent<CardManager>();
-        }
-
-        return _instance;
-    }
-    #endregion
 }

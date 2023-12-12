@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -30,12 +28,12 @@ public class Utility : Ability, IAbility
 
     private Shield shield;
 
-    private Player _player;
+    private PlayerManager _player;
 
     public override void Start()
     {
         base.Start();
-        _player = Player.GetInstance();
+        _player = GameManager.GetInstance().Player;
     }
 
     private void Update()
