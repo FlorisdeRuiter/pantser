@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7238915641427217767}
   - component: {fileID: 7238915641427217688}
   - component: {fileID: 1452428534067123899}
+  - component: {fileID: 373301032629573613}
   m_Layer: 0
   m_Name: Enemy Spider
   m_TagString: Untagged
@@ -52,6 +53,7 @@ MonoBehaviour:
   _damage: 0
   _chaseSpeed: 0
   _expPool: {fileID: 0}
+  Health: {fileID: 0}
 --- !u!58 &7238915641427217767
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -126,6 +128,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc098eee216ae304daaa60744ba6083a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxHealth: 0
+  _currentHealth: 0
+  OnDamaged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 373301032629573613}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: OnHit
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!95 &373301032629573613
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7238915641427217762}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: f839d0497be2d6a4882471204027453d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7911424143346811493
 GameObject:
   m_ObjectHideFlags: 0
