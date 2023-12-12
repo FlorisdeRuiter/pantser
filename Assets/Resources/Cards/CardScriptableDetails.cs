@@ -13,6 +13,7 @@ public class CardScriptableDetails : ScriptableObject
     public int BaseCardStage = 0;
 
     public Texture CardSprite;
+    public Texture CardIcon;
 
     public bool ActivateOnStart;
 

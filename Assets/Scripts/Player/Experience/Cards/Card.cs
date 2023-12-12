@@ -9,6 +9,7 @@ public class Card : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _cardName;
     [SerializeField] private TextMeshProUGUI _cardInfo;
     [SerializeField] private RawImage _cardSprite;
+    [SerializeField] private RawImage _cardIcon;
 
     private CardManager _cardManager;
 
@@ -23,6 +24,7 @@ public class Card : MonoBehaviour
         _cardName.text = details.CardName;
         _cardInfo.text = details.CardInfo;
         _cardSprite.texture = details.CardSprite;
+        _cardIcon.texture = details.CardIcon;
     }
 
     public void OnPickCard()

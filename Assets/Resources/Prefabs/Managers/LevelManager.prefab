@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentExp: 0
-  _requiredExpForLevelUp: 5
-  _requiredExpModifier: 1
+  _requiredExpForLevelUp: 10
+  _requiredExpModifier: 1.3
   _currentLevel: 0
   _levelUpEvent:
     m_PersistentCalls:

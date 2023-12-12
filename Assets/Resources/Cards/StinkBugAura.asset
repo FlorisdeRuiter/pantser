@@ -18,6 +18,7 @@ MonoBehaviour:
   CardStage: 0
   BaseCardStage: 0
   CardSprite: {fileID: 2800000, guid: 890bb4f7db2ae33428406478fd64218f, type: 3}
+  CardIcon: {fileID: 2800000, guid: 4b2c9dd1109532044ba4ef1d4172842d, type: 3}
   ActivateOnStart: 0
   AbilityName: StinkBugAura
   AbilityType: 0

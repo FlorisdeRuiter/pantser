@@ -17,6 +17,7 @@ MonoBehaviour:
   CardStage: 0
   BaseCardStage: 0
   CardSprite: {fileID: 2800000, guid: 65e09921abed5c9479f2d9a4f1486f16, type: 3}
+  CardIcon: {fileID: 2800000, guid: 4b2c9dd1109532044ba4ef1d4172842d, type: 3}
   ActivateOnStart: 0
   AbilityName: ScarabSpin
   AbilityType: 0
