@@ -20,7 +20,9 @@ public abstract class Health : MonoBehaviour, IDamageable
         OnDamaged?.Invoke();
 
         if (_currentHealth <= 0)
+        {
             Death();
+        }
     }
 
     protected abstract void Death();

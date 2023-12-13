@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfd56fb784c1c614f993d8c631771a13, type: 3}
   m_Name: Mantis Enemy
   m_EditorClassIdentifier: 
-  MaxHealth: 100
+  MaxHealth: 30
   Damage: 25
+  AttackInterval: 0.2
   ChaseSpeed: 1.5
   Value: 15

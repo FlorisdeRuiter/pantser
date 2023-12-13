@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8419e6606411e5b40be55c9ba90741f3, type: 3}
+  m_Name: SpawnData
+  m_EditorClassIdentifier: 
+  SpawnEvents:
+  - Time: 0
+    Message: wave 1
+    EnemySpawnData:
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: f79d3af8dd5c6834187ea3f2b72c4288, type: 3}
+      AmountToSpawn: 15
+  - Time: 15
+    Message: wave 2
+    EnemySpawnData:
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: f79d3af8dd5c6834187ea3f2b72c4288, type: 3}
+      AmountToSpawn: 15
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: 19a1f3816bd33844a992dad7401c1d9f, type: 3}
+      AmountToSpawn: 7
+  - Time: 30
+    Message: wave 3
+    EnemySpawnData:
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: f79d3af8dd5c6834187ea3f2b72c4288, type: 3}
+      AmountToSpawn: 20
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: 19a1f3816bd33844a992dad7401c1d9f, type: 3}
+      AmountToSpawn: 10
+  - Time: 45
+    Message: wave 4
+    EnemySpawnData:
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: f79d3af8dd5c6834187ea3f2b72c4288, type: 3}
+      AmountToSpawn: 20
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: 19a1f3816bd33844a992dad7401c1d9f, type: 3}
+      AmountToSpawn: 12
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: ca8759144085cc345abe858362c98265, type: 3}
+      AmountToSpawn: 1
+  - Time: 60
+    Message: wave 5
+    EnemySpawnData:
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: f79d3af8dd5c6834187ea3f2b72c4288, type: 3}
+      AmountToSpawn: 15
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: 19a1f3816bd33844a992dad7401c1d9f, type: 3}
+      AmountToSpawn: 12
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: ca8759144085cc345abe858362c98265, type: 3}
+      AmountToSpawn: 2
+  - Time: 75
+    Message: wave 6
+    EnemySpawnData:
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: 19a1f3816bd33844a992dad7401c1d9f, type: 3}
+      AmountToSpawn: 15
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: ca8759144085cc345abe858362c98265, type: 3}
+      AmountToSpawn: 3
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: 8aabc11d178ccbd4092791d64de82f4b, type: 3}
+      AmountToSpawn: 10

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfd56fb784c1c614f993d8c631771a13, type: 3}
   m_Name: Wasp Enemy
   m_EditorClassIdentifier: 
-  MaxHealth: 15
+  MaxHealth: 7
   Damage: 7
+  AttackInterval: 0.2
   ChaseSpeed: 4
   Value: 2

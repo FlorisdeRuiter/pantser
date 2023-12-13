@@ -38,14 +38,14 @@ public class GameManager : MonoBehaviour
         UiManager.ScoreUiText.UpdateScoreUi(_score);
     }
 
-    [SerializeField] private float _gameTime;
+    [SerializeField] public float GameTime;
     [SerializeField] private float _totalGameTime;
     public void IncreaseTimer()
     {
-        _gameTime += Time.deltaTime;
-        UiManager.TimeUiText.UpdateTimeUi(_gameTime);
+        GameTime += Time.deltaTime;
+        UiManager.TimeUiText.UpdateTimeUi(GameTime);
 
-        if (_gameTime >= _totalGameTime && !_gameHasEnded)
+        if (GameTime >= _totalGameTime && !_gameHasEnded)
         {
             EndGame(true);
         }

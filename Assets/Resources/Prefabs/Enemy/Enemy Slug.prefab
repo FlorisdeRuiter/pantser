@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 7238915641427217688}
   - component: {fileID: -729965530805249376}
   - component: {fileID: -6082218560445502991}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy Slug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,10 +133,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 922c8e2bcb56dc7488bc9db5ccbeedca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 0}
   StatData: {fileID: 11400000, guid: e72fa85772c1fa34a82458bdfeab835d, type: 2}
   _damage: 0
+  _attackInterval: 0
+  _timeUntilAttack: 0
   _chaseSpeed: 0
-  _expPool: {fileID: 0}
   Health: {fileID: 0}
 --- !u!58 &7238915641427217767
 CircleCollider2D:
@@ -167,7 +169,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -198,8 +200,8 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 7
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!114 &-729965530805249376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,6 +216,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 0
   _currentHealth: 0
+  OnDamaged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!95 &-6082218560445502991
 Animator:
   serializedVersion: 5

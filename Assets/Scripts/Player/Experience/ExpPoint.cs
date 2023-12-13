@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class ExpPoint : PoolItem, IPickupable
 {
-    [SerializeField] private int expValue;
+    public int ExpValue;
     [SerializeField] private float _timeTillPlayerReached;
 
     private ExperienceManager experienceManager;
@@ -18,7 +18,7 @@ public class ExpPoint : PoolItem, IPickupable
 
     public void PickUp()
     {
-        experienceManager.OnGainExp(expValue);
+        experienceManager.OnGainExp(ExpValue);
         ReturnToPool();
     }
 

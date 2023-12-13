@@ -15,13 +15,11 @@ public class EnemyHealth : Health
 
     protected override void Death()
     {
-        OnDeath.Invoke();
-        _enemy.ReturnToPool();
         _enemy.DropExp();
         GameManager.GetInstance().IncreaseScore(_enemy.StatData.Value);
-        EnemySpawner.GetInstance().CurrentEnemyValue -= _enemy.StatData.Value;
+        Destroy(gameObject);
     }
-    
+
     public void SetMaxHp(float maxHp)
     {
         MaxHealth = maxHp;

@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 2
   Damage: 5
+  AttackInterval: 0.2
   ChaseSpeed: 2
   Value: 1

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfd56fb784c1c614f993d8c631771a13, type: 3}
   m_Name: Slug Enemy
   m_EditorClassIdentifier: 
-  MaxHealth: 75
+  MaxHealth: 25
   Damage: 1
+  AttackInterval: 0.2
   ChaseSpeed: 0.5
   Value: 4
