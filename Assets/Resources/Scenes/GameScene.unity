@@ -5952,7 +5952,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1033774777865207787, guid: 86a636d05c191064ab8cc537e6d04bbf, type: 3}
       propertyPath: _requiredExpForLevelUp
-      value: 1000
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1033774777865207787, guid: 86a636d05c191064ab8cc537e6d04bbf, type: 3}
       propertyPath: _levelUpEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
