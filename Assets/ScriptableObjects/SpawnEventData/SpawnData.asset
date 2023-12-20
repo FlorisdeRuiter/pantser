@@ -17,45 +17,191 @@ MonoBehaviour:
     Message: wave 1
     EnemySpawnData:
     - EnemyToSpawn: {fileID: 7238915641427217762, guid: f79d3af8dd5c6834187ea3f2b72c4288, type: 3}
-      AmountToSpawn: 15
+      AmountToSpawn: 10
   - Time: 15
     Message: wave 2
     EnemySpawnData:
     - EnemyToSpawn: {fileID: 7238915641427217762, guid: f79d3af8dd5c6834187ea3f2b72c4288, type: 3}
       AmountToSpawn: 15
-    - EnemyToSpawn: {fileID: 7238915641427217762, guid: 19a1f3816bd33844a992dad7401c1d9f, type: 3}
-      AmountToSpawn: 7
   - Time: 30
     Message: wave 3
     EnemySpawnData:
     - EnemyToSpawn: {fileID: 7238915641427217762, guid: f79d3af8dd5c6834187ea3f2b72c4288, type: 3}
       AmountToSpawn: 20
     - EnemyToSpawn: {fileID: 7238915641427217762, guid: 19a1f3816bd33844a992dad7401c1d9f, type: 3}
-      AmountToSpawn: 10
+      AmountToSpawn: 3
   - Time: 45
     Message: wave 4
     EnemySpawnData:
     - EnemyToSpawn: {fileID: 7238915641427217762, guid: f79d3af8dd5c6834187ea3f2b72c4288, type: 3}
-      AmountToSpawn: 20
+      AmountToSpawn: 25
     - EnemyToSpawn: {fileID: 7238915641427217762, guid: 19a1f3816bd33844a992dad7401c1d9f, type: 3}
-      AmountToSpawn: 12
-    - EnemyToSpawn: {fileID: 7238915641427217762, guid: ca8759144085cc345abe858362c98265, type: 3}
-      AmountToSpawn: 1
+      AmountToSpawn: 6
   - Time: 60
     Message: wave 5
     EnemySpawnData:
     - EnemyToSpawn: {fileID: 7238915641427217762, guid: f79d3af8dd5c6834187ea3f2b72c4288, type: 3}
-      AmountToSpawn: 15
+      AmountToSpawn: 30
     - EnemyToSpawn: {fileID: 7238915641427217762, guid: 19a1f3816bd33844a992dad7401c1d9f, type: 3}
-      AmountToSpawn: 12
-    - EnemyToSpawn: {fileID: 7238915641427217762, guid: ca8759144085cc345abe858362c98265, type: 3}
-      AmountToSpawn: 2
+      AmountToSpawn: 10
   - Time: 75
     Message: wave 6
     EnemySpawnData:
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: f79d3af8dd5c6834187ea3f2b72c4288, type: 3}
+      AmountToSpawn: 35
     - EnemyToSpawn: {fileID: 7238915641427217762, guid: 19a1f3816bd33844a992dad7401c1d9f, type: 3}
       AmountToSpawn: 15
+  - Time: 90
+    Message: wave 6
+    EnemySpawnData:
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: f79d3af8dd5c6834187ea3f2b72c4288, type: 3}
+      AmountToSpawn: 40
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: 19a1f3816bd33844a992dad7401c1d9f, type: 3}
+      AmountToSpawn: 20
+  - Time: 105
+    Message: wave 6
+    EnemySpawnData:
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: f79d3af8dd5c6834187ea3f2b72c4288, type: 3}
+      AmountToSpawn: 45
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: 19a1f3816bd33844a992dad7401c1d9f, type: 3}
+      AmountToSpawn: 20
+  - Time: 120
+    Message: wave 6
+    EnemySpawnData:
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: f79d3af8dd5c6834187ea3f2b72c4288, type: 3}
+      AmountToSpawn: 50
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: 19a1f3816bd33844a992dad7401c1d9f, type: 3}
+      AmountToSpawn: 25
+  - Time: 135
+    Message: wave 6
+    EnemySpawnData:
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: f79d3af8dd5c6834187ea3f2b72c4288, type: 3}
+      AmountToSpawn: 30
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: 19a1f3816bd33844a992dad7401c1d9f, type: 3}
+      AmountToSpawn: 30
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: ca8759144085cc345abe858362c98265, type: 3}
+      AmountToSpawn: 2
+  - Time: 150
+    Message: wave 6
+    EnemySpawnData:
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: f79d3af8dd5c6834187ea3f2b72c4288, type: 3}
+      AmountToSpawn: 40
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: 19a1f3816bd33844a992dad7401c1d9f, type: 3}
+      AmountToSpawn: 40
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: ca8759144085cc345abe858362c98265, type: 3}
+      AmountToSpawn: 3
+  - Time: 165
+    Message: wave 6
+    EnemySpawnData:
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: f79d3af8dd5c6834187ea3f2b72c4288, type: 3}
+      AmountToSpawn: 50
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: 19a1f3816bd33844a992dad7401c1d9f, type: 3}
+      AmountToSpawn: 30
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: ca8759144085cc345abe858362c98265, type: 3}
+      AmountToSpawn: 5
+  - Time: 180
+    Message: wave 6
+    EnemySpawnData:
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: f79d3af8dd5c6834187ea3f2b72c4288, type: 3}
+      AmountToSpawn: 60
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: 19a1f3816bd33844a992dad7401c1d9f, type: 3}
+      AmountToSpawn: 35
     - EnemyToSpawn: {fileID: 7238915641427217762, guid: ca8759144085cc345abe858362c98265, type: 3}
       AmountToSpawn: 3
     - EnemyToSpawn: {fileID: 7238915641427217762, guid: 8aabc11d178ccbd4092791d64de82f4b, type: 3}
+      AmountToSpawn: 5
+  - Time: 195
+    Message: wave 6
+    EnemySpawnData:
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: f79d3af8dd5c6834187ea3f2b72c4288, type: 3}
+      AmountToSpawn: 70
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: 19a1f3816bd33844a992dad7401c1d9f, type: 3}
+      AmountToSpawn: 35
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: ca8759144085cc345abe858362c98265, type: 3}
+      AmountToSpawn: 3
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: 8aabc11d178ccbd4092791d64de82f4b, type: 3}
+      AmountToSpawn: 5
+  - Time: 210
+    Message: wave 6
+    EnemySpawnData:
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: f79d3af8dd5c6834187ea3f2b72c4288, type: 3}
+      AmountToSpawn: 75
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: 19a1f3816bd33844a992dad7401c1d9f, type: 3}
+      AmountToSpawn: 35
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: ca8759144085cc345abe858362c98265, type: 3}
+      AmountToSpawn: 3
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: 8aabc11d178ccbd4092791d64de82f4b, type: 3}
+      AmountToSpawn: 8
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: 550952ab3686fc045b91b324c5f43af9, type: 3}
+      AmountToSpawn: 1
+  - Time: 225
+    Message: wave 6
+    EnemySpawnData:
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: f79d3af8dd5c6834187ea3f2b72c4288, type: 3}
+      AmountToSpawn: 80
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: 19a1f3816bd33844a992dad7401c1d9f, type: 3}
+      AmountToSpawn: 45
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: ca8759144085cc345abe858362c98265, type: 3}
+      AmountToSpawn: 7
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: 8aabc11d178ccbd4092791d64de82f4b, type: 3}
       AmountToSpawn: 10
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: 550952ab3686fc045b91b324c5f43af9, type: 3}
+      AmountToSpawn: 4
+  - Time: 240
+    Message: wave 6
+    EnemySpawnData:
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: f79d3af8dd5c6834187ea3f2b72c4288, type: 3}
+      AmountToSpawn: 80
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: 19a1f3816bd33844a992dad7401c1d9f, type: 3}
+      AmountToSpawn: 45
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: ca8759144085cc345abe858362c98265, type: 3}
+      AmountToSpawn: 10
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: 8aabc11d178ccbd4092791d64de82f4b, type: 3}
+      AmountToSpawn: 10
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: 550952ab3686fc045b91b324c5f43af9, type: 3}
+      AmountToSpawn: 5
+  - Time: 255
+    Message: wave 6
+    EnemySpawnData:
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: f79d3af8dd5c6834187ea3f2b72c4288, type: 3}
+      AmountToSpawn: 85
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: 19a1f3816bd33844a992dad7401c1d9f, type: 3}
+      AmountToSpawn: 55
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: ca8759144085cc345abe858362c98265, type: 3}
+      AmountToSpawn: 10
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: 8aabc11d178ccbd4092791d64de82f4b, type: 3}
+      AmountToSpawn: 30
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: 550952ab3686fc045b91b324c5f43af9, type: 3}
+      AmountToSpawn: 7
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: cd4fe3e1c6d5af04ea209f586f2a95ef, type: 3}
+      AmountToSpawn: 1
+  - Time: 270
+    Message: wave 6
+    EnemySpawnData:
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: f79d3af8dd5c6834187ea3f2b72c4288, type: 3}
+      AmountToSpawn: 90
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: 19a1f3816bd33844a992dad7401c1d9f, type: 3}
+      AmountToSpawn: 60
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: ca8759144085cc345abe858362c98265, type: 3}
+      AmountToSpawn: 12
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: 8aabc11d178ccbd4092791d64de82f4b, type: 3}
+      AmountToSpawn: 20
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: 550952ab3686fc045b91b324c5f43af9, type: 3}
+      AmountToSpawn: 15
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: cd4fe3e1c6d5af04ea209f586f2a95ef, type: 3}
+      AmountToSpawn: 2
+  - Time: 285
+    Message: wave 6
+    EnemySpawnData:
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: f79d3af8dd5c6834187ea3f2b72c4288, type: 3}
+      AmountToSpawn: 100
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: 19a1f3816bd33844a992dad7401c1d9f, type: 3}
+      AmountToSpawn: 50
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: ca8759144085cc345abe858362c98265, type: 3}
+      AmountToSpawn: 15
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: 8aabc11d178ccbd4092791d64de82f4b, type: 3}
+      AmountToSpawn: 20
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: 550952ab3686fc045b91b324c5f43af9, type: 3}
+      AmountToSpawn: 10
+    - EnemyToSpawn: {fileID: 7238915641427217762, guid: cd4fe3e1c6d5af04ea209f586f2a95ef, type: 3}
+      AmountToSpawn: 3
