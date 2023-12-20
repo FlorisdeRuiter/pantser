@@ -15,5 +15,5 @@ MonoBehaviour:
   MaxHealth: 2
   Damage: 5
   AttackInterval: 0.2
-  ChaseSpeed: 2
+  ChaseSpeed: 3
   Value: 1
