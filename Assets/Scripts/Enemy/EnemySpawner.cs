@@ -18,18 +18,18 @@ public class EnemySpawner : MonoBehaviour
 
     private Vector3 GetRandomPosition()
     {
-        Vector3 position = new Vector3();
+        Vector3 position = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 0.5f));
 
         float f = Random.value > 0.5f ? -1f : 1f;
         if (Random.value > 0.5f)
         {
-            position.x = Random.Range(-_spawnArea.x, _spawnArea.x);
-            position.y = _spawnArea.y * f;
+            position.x += Random.Range(-_spawnArea.x, _spawnArea.x);
+            position.y += _spawnArea.y * f;
         }
         else
         {
-            position.y = Random.Range(-_spawnArea.y, _spawnArea.y);
-            position.x = _spawnArea.x * f;
+            position.y += Random.Range(-_spawnArea.y, _spawnArea.y);
+            position.x += _spawnArea.x * f;
         }
 
         position.z = 0;

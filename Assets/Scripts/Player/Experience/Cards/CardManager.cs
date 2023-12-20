@@ -95,4 +95,17 @@ public class CardManager : MonoBehaviour
     {
         CardDetailsList.Remove(card);
     }
+
+    public void ResetCardToBaseValues()
+    {
+        foreach (CardScriptableDetails card in CardDetailsList)
+        {
+            card.CardStage = card.BaseCardStage;
+        }
+    }
+
+    private void OnDisable()
+    {
+        ResetCardToBaseValues();
+    }
 }

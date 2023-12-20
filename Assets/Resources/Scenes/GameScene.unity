@@ -5469,7 +5469,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 141077714295902976, guid: a853d32ff090ec5478e7ee32587eb176, type: 3}
       propertyPath: _walkSpeed
-      value: 10
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 141077714295902979, guid: a853d32ff090ec5478e7ee32587eb176, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5514,6 +5514,10 @@ PrefabInstance:
     - target: {fileID: 141077714295902980, guid: a853d32ff090ec5478e7ee32587eb176, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 141077715302486913, guid: a853d32ff090ec5478e7ee32587eb176, type: 3}
+      propertyPath: orthographic size
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8086676762828899519, guid: a853d32ff090ec5478e7ee32587eb176, type: 3}
       propertyPath: m_Radius
