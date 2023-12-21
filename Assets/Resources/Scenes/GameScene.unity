@@ -5906,6 +5906,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1008380694}
     m_Modifications:
+    - target: {fileID: 141077714295902976, guid: a853d32ff090ec5478e7ee32587eb176, type: 3}
+      propertyPath: _walkSpeed
+      value: 6.5
+      objectReference: {fileID: 0}
     - target: {fileID: 141077714295902979, guid: a853d32ff090ec5478e7ee32587eb176, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5959,7 +5963,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9008197755150948380, guid: a853d32ff090ec5478e7ee32587eb176, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008197755150948380, guid: a853d32ff090ec5478e7ee32587eb176, type: 3}
       propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008197755150948380, guid: a853d32ff090ec5478e7ee32587eb176, type: 3}
+      propertyPath: m_GravityScale
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
