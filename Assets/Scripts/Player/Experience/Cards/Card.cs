@@ -8,6 +8,7 @@ public class Card : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI _cardName;
     [SerializeField] private TextMeshProUGUI _cardInfo;
+    [SerializeField] private TextMeshProUGUI _cardLevel;
     [SerializeField] private RawImage _cardSprite;
     [SerializeField] private RawImage _cardIcon;
 
@@ -25,6 +26,11 @@ public class Card : MonoBehaviour
         _cardInfo.text = details.CardInfo;
         _cardSprite.texture = details.CardSprite;
         _cardIcon.texture = details.CardIcon;
+
+        if (details.CardStage <= 0)
+            _cardLevel.text = "New Ability!";
+        else
+            _cardLevel.text = "Lvl." + details.CardStage.ToString();
     }
 
     public void OnPickCard()
