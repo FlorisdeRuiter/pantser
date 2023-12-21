@@ -18,6 +18,7 @@ public class BaseEnemy : MonoBehaviour, IEnemy
     [SerializeField] private float _chaseSpeed;
 
     private ObjectPool _expPool;
+    private Vector2 _targetDir;
     public EnemyHealth Health;
 
     private void Start()
@@ -32,6 +33,8 @@ public class BaseEnemy : MonoBehaviour, IEnemy
     private void Update()
     {
         _timeUntilAttack -= Time.deltaTime;
+        //Sets target
+        _targetDir = (_player.transform.position - transform.position).normalized;
     }
 
     private void FixedUpdate()
@@ -42,11 +45,8 @@ public class BaseEnemy : MonoBehaviour, IEnemy
     #region Move to Player
     public virtual void MoveTowardsTarget()
     {
-        //Sets target
-        Vector3 targetDir = (_player.transform.position - transform.position).normalized;
-
         //Moves enemy towards target
-        _rigidbody.MovePosition(transform.position + targetDir * _chaseSpeed * Time.deltaTime);
+        _rigidbody.MovePosition(_rigidbody.position + _chaseSpeed * Time.fixedDeltaTime * _targetDir);
     }
     #endregion
 
