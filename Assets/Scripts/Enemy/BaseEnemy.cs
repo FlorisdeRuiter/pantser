@@ -6,6 +6,7 @@ using UnityEngine;
 public class BaseEnemy : MonoBehaviour, IEnemy
 {
     [SerializeField] private PlayerManager _player;
+    [SerializeField] private Rigidbody2D _rigidbody;
     public EnemyScriptableData StatData;
 
     [Header("Damage")]
@@ -17,10 +18,12 @@ public class BaseEnemy : MonoBehaviour, IEnemy
     [SerializeField] private float _chaseSpeed;
 
     private ObjectPool _expPool;
+    private Vector2 _targetDir;
     public EnemyHealth Health;
 
     private void Start()
     {
+        _rigidbody = GetComponent<Rigidbody2D>();
         Health = GetComponent<EnemyHealth>();
         _expPool = SetEnemyExpPool.GetInstance().ExpPool;
         _player = GameManager.GetInstance().Player;
@@ -30,17 +33,20 @@ public class BaseEnemy : MonoBehaviour, IEnemy
     private void Update()
     {
         _timeUntilAttack -= Time.deltaTime;
+        //Sets target
+        _targetDir = (_player.transform.position - transform.position).normalized;
+    }
+
+    private void FixedUpdate()
+    {
         MoveTowardsTarget();
     }
 
     #region Move to Player
     public virtual void MoveTowardsTarget()
     {
-        //Sets target
-        Vector2 targetPos = _player.transform.position;
-
         //Moves enemy towards target
-        transform.position = Vector2.MoveTowards(transform.position, targetPos, _chaseSpeed * Time.deltaTime);
+        _rigidbody.MovePosition(_rigidbody.position + _chaseSpeed * Time.fixedDeltaTime * _targetDir);
     }
     #endregion
 
