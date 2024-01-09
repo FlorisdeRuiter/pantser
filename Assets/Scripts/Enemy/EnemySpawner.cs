@@ -8,12 +8,24 @@ public class EnemySpawner : MonoBehaviour
     [Header("Enemy Spawn Offset")]
     [SerializeField] private Vector2 _spawnArea;
 
-    public void SpawnEnemy(GameObject enemyToSpawn)
-    {
-        Vector3 position = GetRandomPosition();
+    private Dictionary<GameObject,ObjectPool> _enemyPools = new Dictionary<GameObject, ObjectPool>();
 
-        GameObject newEnemy = Instantiate(enemyToSpawn, transform);
-        newEnemy.transform.position = GetRandomPosition();
+    public void SpawnEnemy(GameObject poolIndex)
+    {
+
+        ObjectPool pool;
+        if (!_enemyPools.TryGetValue(poolIndex, out pool))
+        {
+            pool = new GameObject("pool").AddComponent<ObjectPool>();
+            pool.PooledObject = poolIndex;
+            pool.PoolSize = 100;
+            pool._autoExpand = true;
+            pool._expansionSize = 5;
+            pool.transform.SetParent(transform);
+
+            _enemyPools.Add(poolIndex, pool);
+        }
+        pool.GetPooledObject(GetRandomPosition(), Quaternion.identity, pool.transform);
     }
 
     private Vector3 GetRandomPosition()

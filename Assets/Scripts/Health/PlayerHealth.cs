@@ -20,7 +20,7 @@ public class PlayerHealth : Health, IHealable
         set
         {
             _currentHealth = value;
-            _uiManager.HealthUiBar.UpdateHealthBar(_currentHealth, MaxHealth);
+            _uiManager.HealthUiBar.UpdateHealthBar(_currentHealth, _maxHealth);
         }
     }
 
@@ -30,15 +30,17 @@ public class PlayerHealth : Health, IHealable
 
         if (_currentHealth <= 0)
             Death();
+
+        OnDamaged?.Invoke();
     }
 
     public void Heal(float healAmount)
     {
         m_currentHealth += healAmount;
 
-        if (_currentHealth > MaxHealth)
+        if (_currentHealth > _maxHealth)
         {
-            m_currentHealth = MaxHealth;
+            m_currentHealth = _maxHealth;
         }
     }
 

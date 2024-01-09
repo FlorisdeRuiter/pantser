@@ -14,10 +14,10 @@ public class ObjectPool : MonoBehaviour
     public int PoolSize;
 
     [Tooltip("Set this to true if you want to expand the pool if you run out of pooled objects.")]
-    [SerializeField] private bool _autoExpand;
+    [SerializeField] public bool _autoExpand;
 
     [Tooltip("The amount of new objects added when the pool runs out of objects.")]
-    [SerializeField] private int _expansionSize;
+    [SerializeField] public int _expansionSize;
 
     /// <summary>
     /// The Stack that holds the ObjectPool's items

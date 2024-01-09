@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CircleCollider2D))]
-public class BaseEnemy : MonoBehaviour, IEnemy
+public class BaseEnemy : PoolItem, IEnemy
 {
     [SerializeField] private PlayerManager _player;
     public EnemyScriptableData StatData;

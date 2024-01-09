@@ -13,7 +13,7 @@ public class SpawnEvent
 [Serializable]
 public class EnemySpawnData
 {
-    public GameObject EnemyToSpawn;
+    public GameObject GameObjectToSpawn;
     public int AmountToSpawn;
 }
 
