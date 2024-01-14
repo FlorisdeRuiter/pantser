@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 98f42f749cd77c545b8b713123f7c584, type: 3}
+  m_Sprite: {fileID: 1989327381, guid: 8c79a5efae204d64d8039ccabf0acf88, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -134,8 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 0}
-  _stopDistance: 0.9
-  _rb: {fileID: 0}
+  _rigidbody: {fileID: 0}
   StatData: {fileID: 11400000, guid: e72fa85772c1fa34a82458bdfeab835d, type: 2}
   _damage: 0
   _attackInterval: 0
@@ -216,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc098eee216ae304daaa60744ba6083a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 0
+  _maxHealth: 0
   _currentHealth: 0
   OnDamaged:
     m_PersistentCalls:
