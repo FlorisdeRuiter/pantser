@@ -46,8 +46,7 @@ public abstract class ARangedAttack : AAttack
             Vector3 targetPos = _target.position;
 
             // Checks what direction the target is in
-            targetPos.x = targetPos.x - spawnPos.x;
-            targetPos.y = targetPos.y - spawnPos.y;
+            targetPos -= spawnPos;
             targetPos.z = 0;
 
             // Calculates projectile's angle to target the enemy
