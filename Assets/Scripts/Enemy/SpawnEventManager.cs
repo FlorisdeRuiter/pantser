@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class SpawnEventManager : MonoBehaviour
@@ -26,11 +28,13 @@ public class SpawnEventManager : MonoBehaviour
             {
                 for (int i = 0; i < spawnData.AmountToSpawn; i++)
                 {
-                    _enemySpawner.SpawnEnemy(spawnData.EnemyToSpawn);
+                    _enemySpawner.SpawnEnemy(spawnData.GameObjectToSpawn);
                 }
             }
 
             _eventIndex += 1;
         }
     }
+
+
 }

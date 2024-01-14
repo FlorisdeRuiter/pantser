@@ -10,18 +10,18 @@ public class EnemyHealth : Health
 
     private void OnEnable()
     {
-        _currentHealth = MaxHealth;
+        _currentHealth = _maxHealth;
     }
 
     protected override void Death()
     {
         _enemy.DropExp();
         GameManager.GetInstance().IncreaseScore(_enemy.StatData.Value);
-        Destroy(gameObject);
+        _enemy.ReturnToPool();
     }
 
     public void SetMaxHp(float maxHp)
     {
-        MaxHealth = maxHp;
+        _maxHealth = maxHp;
     }
 }
