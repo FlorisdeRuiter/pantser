@@ -49,7 +49,7 @@ MonoBehaviour:
     EnemySpawnData:
     - GameObjectToSpawn: {fileID: 7238915641427217762, guid: f79d3af8dd5c6834187ea3f2b72c4288, type: 3}
       AmountToSpawn: 35
-    - GameObjectToSpawn: {fileID: 0}
+    - GameObjectToSpawn: {fileID: 7238915641427217762, guid: 19a1f3816bd33844a992dad7401c1d9f, type: 3}
       AmountToSpawn: 15
   - Time: 90
     Message: wave 6
